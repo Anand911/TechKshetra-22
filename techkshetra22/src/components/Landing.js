@@ -1,5 +1,7 @@
 import Astronaut from "../assets/astro.png"
 import Techtalk from "../assets/tech-talks-person.png"
+import Drums from "../assets/drums.png"
+import Bandslam from "../assets/band-label.png"
 import Card from "./Card";
 
 
@@ -17,8 +19,15 @@ const Landing = () => {
             <div>
                 <h3 className="mx-44 text-4xl font-semibold uppercase">What's in store for you?</h3>
             </div>
-            <div>
+            <div className="flex justify-between w-full px-40 py-20">
                 <Card title="Workshops" desc="lorem epsum dolor sit amet" image={Techtalk}/>
+                <Card title="Events" desc="lorem epsum dolor sit amet" image={Techtalk}/>
+                <Card title="Tech Talks" desc="lorem epsum dolor sit amet" image={Techtalk}/>
+            </div>
+
+            <div className="flex justify-center items-center">
+                <img className="absolute h-96" src={Drums}/>
+                <img className="px-96 py-20" src={Bandslam}/>
             </div>
         </div>
     );
