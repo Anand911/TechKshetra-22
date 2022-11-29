@@ -1,25 +1,33 @@
-import Logo from '../assets/techkshetra_final.png'
-import ProfilImage from '../assets/profile.jpg'
+import Logo from "../assets/techkshetra_final.png";
+import ProfilImage from "../assets/profile.jpg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-    return (
+  return (
     <nav className="flex justify-between items-center h-24">
-        <div class="nav-div">
-            <a href="#" class="nav-brand">
-                <img className="h-24" src={Logo} alt="logo"/>
-            </a>
-        </div>
-        <div className="flex">
-            <ul class="flex">
-                <li className="p-4"><a href="">Workshops</a></li>
-                <li className="p-4"><a href="">Events</a></li>
-                <li className="p-4"><a href="">Marketing</a></li>
-                <li className="p-4"><a href="">Tech Talks</a></li>
-            </ul>
-            <img className='h-12 rounded-full mx-4' src={ProfilImage} alt="profile image"/>
-        </div>
+      <div class="nav-div">
+        <Link to="/">
+          <img className="h-24" src={Logo} alt="logo" />
+        </Link>
+      </div>
+      <div className="flex">
+        <Link to="/workshop" className="p-4">
+          Workshops
+        </Link>
+        <Link to="/events" className="p-4">
+          Events
+        </Link>
+        <Link to="/techtalks" className="p-4">
+          Tech Talks
+        </Link>
+        <img
+          className="h-12 rounded-full mx-4"
+          src={ProfilImage}
+          alt="profile image"
+        />
+      </div>
     </nav>
-    );
-  };
-  
-  export default Header;
+  );
+};
+
+export default Header;
