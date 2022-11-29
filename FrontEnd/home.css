@@ -1,0 +1,238 @@
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+:root{
+    --bg-color:#000;
+    --text-color:white;
+}
+
+body,html{
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    font-family: 'Mori Gothic',sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+    color: var(--text-color);
+}
+.main-div{
+   
+}
+header{
+    position: relative;
+}
+.navbar{
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    background: black;
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+    align-items: center;
+    padding-right: 20px;
+}
+.nav-item{
+    list-style: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.navbar-flex{
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+.nav-div
+{
+    width: 50%;
+    align-items: center;
+}
+.nav-brand img{
+   max-width: 100%;
+   width: 80px;
+}
+.nav-signup{
+    border-radius: 50%;
+    
+}
+ul{
+    margin: 0;
+}
+.profile-icon{
+    height: 50px;
+    max-width: 100%;
+}
+.items-flex{
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+}
+
+.tech-head-inside{
+    border: 5px solid white;
+}
+
+/*Star*/
+#flex-div{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 100px;
+    max-width: 1600px;
+    margin: 120px auto 160px;
+}
+.kochi-flex{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    color: white;
+    font-size: 8.1vw;
+    font-weight: 700;
+    line-height: 75%;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.techfest-kochi-top{
+    display: flex;
+    gap: 90px;
+    
+}
+.techfest-kochi-bottom{
+    display: flex;
+}
+.techfest-t{
+    background: white;
+    color: #000;
+    padding-bottom: 1.7vw;
+    white-space: nowrap;
+}
+
+.row-flex{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+}
+.about-flex >div{
+    width: 50%;
+}
+@media only screen and (max-width: 500px) {
+    .about-flex{
+        flex-direction: column;
+    }
+    .about-flex>div {
+            width: 100%;
+        }
+        #flex-div {
+            padding: 0px 5px;
+        }
+}
+
+.about-us{
+   padding: 0px 100px;
+}
+.about-vector img{
+    -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        max-height: 600px;
+        animation: anim 5s linear infinite;
+        animation-delay: 1s;
+}
+.bottom-store-card
+{
+    height: 280px;
+        padding: 12px;
+        background-color: white;
+        -webkit-clip-path: polygon(calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%, 0 0);
+        clip-path: polygon(calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%, 0 0);
+}
+.bottom-store-card>p{
+    color: #000;
+    text-align: justify;
+}
+.top-store-card
+{
+    height: 340px;
+    border-left: 10px solid white;
+    border-top: 10px solid white;
+    position: relative;
+}
+.whats-in-store>div{
+    width: 30%;
+
+}
+.whats-in-store{
+    justify-content: space-between;
+}
+.store-card-head{
+    background: var(--bg-color);
+    color: white;
+    padding: 10px;
+    font-family: 'Joystix Monospace';
+    font-weight: 100;
+}
+.trade-icon
+{
+    background: var(--bg-color);
+    padding: 5px 7px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+}
+.trade-icon img{
+    height: 24px;
+}
+.store-card-img{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+#rset-talks{
+    position: absolute;
+    top: -140px;
+    left: -80px;
+    height: 160px;
+}
+/*Band Banner*/
+.auto-show-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.band-banner{
+    max-width: 400px;
+    position: absolute;
+    
+}
+.band-heading img{
+    max-width: 600px;
+}
+.band-heading .altr{
+ 
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+}
+@keyframes anim {
+    0% {
+        transform: translateY(0px) scaleX(-1);
+    }
+
+    
+    50% {
+        transform: translateY(50px) scaleX(-1);
+    }
+
+    100% {
+        transform: translateY(0px) scaleX(-1);
+    }
+}

@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Mori Gothic';
+    src: local('Mori Gothic Regular'), local('Mori-Gothic-Regular'),
+        url('MoriGothic-Regular.woff2') format('woff2'),
+        url('MoriGothic-Regular.woff') format('woff'),
+        url('MoriGothic-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+      font-family: 'Joystix Monospace';
+      src: local('joystix monospace'), local('joystix-monospace'),
+          url('joystix monospace.ttf') format('truetype');
+    
+      font-style: normal;
+  }
