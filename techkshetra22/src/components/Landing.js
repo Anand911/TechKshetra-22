@@ -9,18 +9,12 @@ import Card from "./Card";
 import React, { useRef } from "react";
 import Slider from "./Slider"
 
-
 const Landing = () => {
     const videoRef = useRef();
 
     return (
         <div>
             <div className="">
-                <div className="absolute w-full">
-                    <img className="m-auto pt-20 w-3/4" src={Ticket}/>
-                    <img className="m-auto py-20 w-14" src={ScrollGif}/>
-                    <Slider/>
-                </div>
                 <video
                     ref={videoRef}
                     src={BgVideo}
@@ -29,17 +23,25 @@ const Landing = () => {
                     muted
                     className="object-cover h-5/6 -z-40 opacity-20"
                 />
+                <div className="absolute w-full pt-24 top-0">
+                    <div className="h-content m-auto pt-28 w-3/4">
+                        <img src={Ticket}/>
+                    </div>
+                    <img className="m-auto py-20 w-14" src={ScrollGif}/>
+                    <Slider/>
+                </div>
             </div>
 
-            <div className="px-20 z-10">
-                <h2 className="uppercase font-semibold text-9xl" >Biggest <span className="mx-2 px-2 rounded-sm underline bg-white text-black">Techfest</span>  in Kochi!</h2>
+            <div className="mt-40 px-20 z-10">
+                <h2 className="uppercase font-semibold text-9xl" >Biggest <span className="mx-2 px-2 rounded-sm underline bg-white text-black">Techfest</span> in Kochi!</h2>
                 <div className="flex mx-80 my-20">
-                    <img src={Astronaut}/>
+                    <img className="animate-blob" src={Astronaut}/>
                     <div className="flex flex-col justify-center">
                         <h3 className="my-3 text-3xl font-bold">About Us</h3>
                         <p className="pb-10 text-2xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua.</p>
                     </div>
                 </div>
+
                 <div>
                     <h3 className="mx-44 text-4xl font-semibold uppercase">What's in store for you?</h3>
                 </div>
@@ -55,7 +57,7 @@ const Landing = () => {
                 </div>
             </div>
         </div>
-    );
-  };
-  
-  export default Landing;
+  );
+};
+
+export default Landing;
