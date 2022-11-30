@@ -11,17 +11,17 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex">
-        <Link to="/workshop" className="p-4 mx-6">
+        <Link to="/workshop" className="p-4 mx-1">
           Workshops
         </Link>
-        <Link to="/events" className="p-4 mx-6">
+        <Link to="/events" className="p-4 mx-1">
           Events
         </Link>
-        <Link to="/techtalks" className="p-4 mx-6">
+        <Link to="/techtalks" className="p-4 mx-1">
           Tech Talks
         </Link>
         <img
-          className="h-12 rounded-full mr-8"
+          className="h-12 rounded-full mx-8"
           src={ProfilImage}
           alt="profile image"
         />
