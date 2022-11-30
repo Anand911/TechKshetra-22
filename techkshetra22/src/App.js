@@ -6,6 +6,7 @@ import Header from "./components/Navbar";
 import Techtalks from "./components/Techtalks";
 import Workshop from "./components/Workshop";
 import ProgressBar from "react-scroll-progress-bar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/techtalks" element={<Techtalks />} />
         </Routes>
         <Header />
+        <Footer />
       </div>
     </BrowserRouter>
   );
