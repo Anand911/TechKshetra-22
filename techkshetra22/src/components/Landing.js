@@ -2,8 +2,10 @@ import Astronaut from "../assets/astro.png";
 import Techtalk from "../assets/tech-talks-person.png";
 import Drums from "../assets/drums.png";
 import Bandslam from "../assets/band-label.png";
+import Speaker from "../assets/speaker.svg";
 import BgVideo from "../assets/purple-lights.mp4";
 import Ticket from "../assets/Ticket.svg";
+import TicketMob from "../assets/TicketMobile.svg";
 import ScrollGif from "../assets/scroll_anim1.gif";
 import Card from "./Card";
 import React, { useRef } from "react";
@@ -16,7 +18,7 @@ const Landing = () => {
 
   return (
     <div>
-      <div className="">
+      <div>
         <video
           ref={videoRef}
           src={BgVideo}
@@ -31,7 +33,8 @@ const Landing = () => {
                 tiltMaxAngleX={3}
                 tiltMaxAngleY={3}
                 gyroscope={true}>
-                <img src={Ticket} />
+                <img src={TicketMob} alt="Teckshetra Ticket" className="md:hidden" />
+				<img src={Ticket} alt="Teckshetra Ticket" className="hidden md:flex" />
             </Tilt>
           </div>
           <img className="m-auto py-20 w-14" src={ScrollGif} alt="scroll wheel"/>
@@ -48,7 +51,7 @@ const Landing = () => {
           in Kochi!
         </h2>
         <div className="flex mx-80 my-20">
-          <img className="animate-blob" src={Astronaut} />
+          <img className="animate-blob" src={Astronaut} alt="Astronaut"/>
           <div className="flex flex-col justify-center">
             <h3 className="my-3 text-3xl font-bold">About Us</h3>
             <p className="pb-10 text-2xl">
@@ -85,10 +88,12 @@ const Landing = () => {
         </div>
 
         <div className="flex justify-center items-center">
-          <img className="absolute h-96" src={Drums} />
-          <img className="px-96 py-20" src={Bandslam} />
+          <img className="w-2/5 py-20" src={Speaker} alt="BandSlam" />
+          <img className="absolute px-96" src={Bandslam} alt="BandSlam" />
+          <img className="absolute h-1/2" src={Drums} alt="BandSlam" />
         </div>
-      </div>
+    	</div>
+    	<Slider />
     </div>
   );
 };

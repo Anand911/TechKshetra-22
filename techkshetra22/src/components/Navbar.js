@@ -33,7 +33,7 @@ const Header = () => {
         <img
           className="h-12 rounded-full mx-8"
           src={ProfilImage}
-          alt="profile image"
+          alt="profile"
         />
       </div>
     </nav>
