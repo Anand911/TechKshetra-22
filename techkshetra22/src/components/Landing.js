@@ -10,8 +10,7 @@ import ScrollGif from "../assets/scroll_anim1.gif";
 import Card from "./Card";
 import React, { useRef } from "react";
 import Slider from "./Slider";
-import Tilt from 'react-parallax-tilt';
-
+import Tilt from "react-parallax-tilt";
 
 const Landing = () => {
   const videoRef = useRef();
@@ -37,7 +36,11 @@ const Landing = () => {
 				<img src={Ticket} alt="Teckshetra Ticket" className="hidden md:flex" />
             </Tilt>
           </div>
-          <img className="m-auto py-20 w-14" src={ScrollGif} alt="scroll wheel"/>
+          <img
+            className="m-auto py-20 w-14"
+            src={ScrollGif}
+            alt="scroll wheel"
+          />
           <Slider />
         </div>
       </div>
