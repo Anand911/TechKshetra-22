@@ -8,8 +8,7 @@ import ScrollGif from "../assets/scroll_anim1.gif";
 import Card from "./Card";
 import React, { useRef } from "react";
 import Slider from "./Slider";
-import Tilt from 'react-parallax-tilt';
-
+// import Tilt from "react-parallax-tilt";
 
 const Landing = () => {
   const videoRef = useRef();
@@ -27,14 +26,18 @@ const Landing = () => {
         />
         <div className="absolute w-full pt-24 top-0">
           <div className="h-content m-auto pt-28 w-3/4">
-            <Tilt
+            <img src={Ticket} />
+            {/* <Tilt
                 tiltMaxAngleX={3}
                 tiltMaxAngleY={3}
                 gyroscope={true}>
-                <img src={Ticket} />
-            </Tilt>
+            </Tilt> */}
           </div>
-          <img className="m-auto py-20 w-14" src={ScrollGif} alt="scroll wheel"/>
+          <img
+            className="m-auto py-20 w-14"
+            src={ScrollGif}
+            alt="scroll wheel"
+          />
           <Slider />
         </div>
       </div>

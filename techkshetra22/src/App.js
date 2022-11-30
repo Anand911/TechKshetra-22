@@ -11,8 +11,8 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <BrowserRouter>
-      <div className="bg-black text-slate-100">
-        <ProgressBar bgcolor="white"/>
+      <div className="bg-black text-slate-100 overflow-hidden">
+        <ProgressBar bgcolor="white" />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/workshop" element={<Workshop />} />
