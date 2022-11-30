@@ -1,6 +1,7 @@
 import Logo from "../assets/techkshetra_final.png";
 import ProfilImage from "../assets/profile.jpg";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 const Header = () => {
   return (
@@ -11,13 +12,22 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex">
-        <Link to="/workshop" className="p-4 mx-6">
+        <Link
+          to="/workshop"
+          className="p-4 mx-6 link link-underline link-underline-black"
+        >
           Workshops
         </Link>
-        <Link to="/events" className="p-4 mx-6">
+        <Link
+          to="/events"
+          className="p-4 mx-6 link link-underline link-underline-black"
+        >
           Events
         </Link>
-        <Link to="/techtalks" className="p-4 mx-6">
+        <Link
+          to="/techtalks"
+          className="p-4 mx-6 link link-underline link-underline-black"
+        >
           Tech Talks
         </Link>
         <img
