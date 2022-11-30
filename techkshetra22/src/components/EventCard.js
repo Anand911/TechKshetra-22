@@ -1,31 +1,36 @@
-import React from 'react'
-import Purplegoo from '../assets/profile.png'
+import React from "react";
+import React3D from "../assets/google.png";
 import { Button } from '@cred/neopop-web/lib/components';
 
-export const EventCard = ({title, desc, price}) => {
-    return (
-        <div class="flex m-10 flex-col justify-center items-center w-full max-w-sm bg-black rounded-lg shadow-md dark:black border-white border-2 h-[30em]">
-            <img className="w-[70%] p-8 rounded-[2.5em]" src={Purplegoo} alt="poster" />
-            <div class="px-5 pb-5">
-                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{title}</h5>
-                <p className="text-justify text-l py-2">{desc}</p>
-                <div class="flex items-center justify-between">
-                    <span class="text-3xl font-bold text-gray-900 dark:text-white">₹ {price}</span>
-                    <Button
-                        variant="primary"
-                        kind="elevated"
-                        size="big"
-                        colorMode="light"
-                        onClick={() => {
-                            console.log("I'm clicked");
-                        }}
-                    >
-                        Register
-                    </Button>
-                </div>
-            </div>
+export const Workshops = ({ title, desc, price }) => {
+  return (
+    <div className="bg-white w-72 h-[23em] flex flex-col items-center rounded-[0.2em] my-16 mx-10">
+      <div className="bg-black w-[95%] h-[10em] flex items-center justify-center rounded-[0.2em] my-2">
+        <img
+          className=" object-cover rounded-md relative bottom-[30%]"
+          src={React3D}
+          alt="card"
+        />
+      </div>
+      <h3 className="text-black text-2xl font-bold">{title}</h3>
+      <p className="text-black text-justify w-[95%] text-sm my-2 pb-2">{desc}</p>
+      <div className="flex justify-between items-baseline w-full px-2">
+        <h3 className="text-black text-2xl font-extrabold">₹{price}</h3>
+        <div className="mb-4">
+                <Button
+                    variant="primary"
+                    kind="elevated"
+                    size="medium"
+                    colorMode="dark"
+                    onClick={() => {
+                        console.log("I'm clicked");
+                    }}
+                >
+                Register
+            </Button>
         </div>
-
-    )
-}
-export default EventCard;
+      </div>
+    </div>
+  );
+};
+export default Workshops;

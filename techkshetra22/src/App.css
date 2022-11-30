@@ -21,3 +21,15 @@
   background-size: 100% 3px;
   background-position: 0 100%;
 }
+
+.gridPattern {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+.gridPattern {
+    background-image:
+      repeating-linear-gradient(rgb(122, 122, 122) 0 1px, transparent 1px 100%),
+      repeating-linear-gradient(90deg, rgb(122, 122, 122) 0 1px, transparent 1px 100%);
+    background-size: 71px 71px;
+}

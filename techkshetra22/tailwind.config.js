@@ -35,8 +35,8 @@ module.exports = {
     screens: {
       // using max-width instead of default min-width
       "2xl": { max: "1535px" },
-      xl: { max: "1279px" },
-      xll: { max: "1200px" },
+      xll: { max: "1279px" },
+      xl: { max: "1200px" },
       lg: { max: "1023px" },
       md: { max: "767px" },
       sm: { max: "639px" },

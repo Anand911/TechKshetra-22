@@ -1,13 +1,11 @@
 
-export default function Slider() {
-
-    const words = ["TECHKSHETRA", "*", "2022", "*", "WORKSHOPS", "*", "TECHTALKS", "*", "FOOD", "*", "BANDSLAM", "*"]
+export default function Slider({words}) {
     return (
-      <div className="flex h-20 items-center justify-center">
+      <div className="flex h-20 items-center justify-center smm:h-12">
         {/* 1. */}
-        <div className="w-[200%] h-20 border-t border-b border-gray-600 overflow-hidden relative">
+        <div className="w-[200%] h-20 border-t border-b border-gray-600 overflow-hidden relative smm:h-12">
           {/* 2. */}
-          <div className="w-[200%] flex items-center h-20 justify-around absolute left-0 animate gap-20 animate">
+          <div className="w-[200%] flex items-center h-20 justify-around absolute left-0 animate gap-20 animate smm:h-12">
             {/* 3 */}
             {words.map((i) => {
               return (

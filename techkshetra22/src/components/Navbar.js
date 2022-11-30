@@ -5,7 +5,7 @@ import "../App.css";
 
 const Header = () => {
   return (
-    <nav className="flex fixed w-full top-0 uppercase justify-between items-center h-24 bg-black border-b border-gray-600">
+    <nav className="flex fixed w-full top-0 uppercase justify-between items-center h-24 bg-black border-b border-gray-600 smm:text-center">
       <div class="nav-div">
         <Link to="/">
           <img className="h-16 smm:h-8 sm:h-10" src={Logo} alt="logo" />

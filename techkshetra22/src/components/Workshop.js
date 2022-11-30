@@ -3,9 +3,10 @@ import Data from "../data/workshops.json"
 import Slider from "./Slider";
 
 const Workshop = () => {
+  const words = ["WORKSHOPS", "*", "WORKSHOPS","*", "WORKSHOPS", "*", "WORKSHOPS", "*", "WORKSHOPS", "*", "WORKSHOPS", "*",];
   return (
     <div className="pt-24">
-      <Slider />
+      <Slider words={words}/>
       <div className="flex flex-wrap justify-center pt-4">
         {Data.map((i) => {
           return (
@@ -17,7 +18,7 @@ const Workshop = () => {
           );
         })}
       </div>
-      <Slider />
+      <Slider words={words}/>
     </div>
   );
 };
