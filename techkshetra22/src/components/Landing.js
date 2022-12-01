@@ -21,7 +21,7 @@ const Landing = () => {
   const words = ["TECHKSHETRA", "*", "2022", "*", "WORKSHOPS", "*", "TECHTALKS", "*", "FOOD", "*", "BANDSLAM", "*"]
 
   return (
-    <div className="noise">
+    <div className="">
       <div>
         <video
           ref={videoRef}
