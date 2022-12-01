@@ -7,6 +7,7 @@ import Techtalks from "./components/Techtalks";
 import Workshop from "./components/Workshop";
 import ProgressBar from "react-scroll-progress-bar";
 import Footer from "./components/Footer";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/workshop" element={<Workshop />} />
           <Route path="/events" element={<Events />} />
           <Route path="/techtalks" element={<Techtalks />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Header />
         <Footer />

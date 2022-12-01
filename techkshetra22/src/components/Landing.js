@@ -12,13 +12,26 @@ import Card from "./Card";
 import React, { useRef } from "react";
 import Slider from "./Slider";
 import Tilt from "react-parallax-tilt";
-import Zoom from 'react-reveal/Zoom';
+import Zoom from "react-reveal/Zoom";
 import BackToTop from "react-back-to-top-button";
-import {AiOutlineArrowUp} from "react-icons/ai"
+import { AiOutlineArrowUp } from "react-icons/ai";
 
 const Landing = () => {
   const videoRef = useRef();
-  const words = ["TECHKSHETRA", "*", "2022", "*", "WORKSHOPS", "*", "TECHTALKS", "*", "FOOD", "*", "BANDSLAM", "*"]
+  const words = [
+    "TECHKSHETRA",
+    "*",
+    "2022",
+    "*",
+    "WORKSHOPS",
+    "*",
+    "TECHTALKS",
+    "*",
+    "FOOD",
+    "*",
+    "BANDSLAM",
+    "*",
+  ];
 
   return (
     <div className="">
@@ -33,12 +46,13 @@ const Landing = () => {
         />
         <div className="absolute w-full pt-24 top-0">
           <div className="h-content m-auto pt-28 w-3/4 smm:pt-10 sm:py-6 md:pt-8">
-            <Tilt
-                tiltMaxAngleX={3}
-                tiltMaxAngleY={3}
-                gyroscope={true}>
-                <img src={Ticket} alt="Teckshetra Ticket" className="md:hidden" />
-				<img src={TicketMob} alt="Teckshetra Ticket" className="hidden mx-auto md:block" />
+            <Tilt tiltMaxAngleX={3} tiltMaxAngleY={3} gyroscope={true}>
+              <img src={Ticket} alt="Teckshetra Ticket" className="md:hidden" />
+              <img
+                src={TicketMob}
+                alt="Teckshetra Ticket"
+                className="hidden mx-auto md:block"
+              />
             </Tilt>
           </div>
           <img
@@ -46,7 +60,7 @@ const Landing = () => {
             src={ScrollGif}
             alt="scroll wheel"
           />
-          <Slider words={words}/>
+          <Slider words={words} />
         </div>
       </div>
 
@@ -62,7 +76,11 @@ const Landing = () => {
         </Zoom>
 
         <div className="flex mx-80 my-20 smm:w-full md:m-1 lg:mx-4 xl:mx-20 xll:mx-32">
-          <img className="animate-[blob_5s_infinite] smm:w-32" src={Astronaut} alt="Astronaut"/>
+          <img
+            className="animate-[blob_5s_infinite] smm:w-32"
+            src={Astronaut}
+            alt="Astronaut"
+          />
           <div className="flex flex-col justify-center">
             <h3 className="my-3 text-3xl font-bold smm:text-lg">About Us</h3>
             <p className="pb-10 text-2xl smm:text-sm">
@@ -80,10 +98,10 @@ const Landing = () => {
         <Zoom>
           <div className="flex justify-between w-full px-32 py-20 smm:px-4 smm:py-1 lg:px-4 lg:flex-wrap lg:justify-center lg:py-6 xll:px-10">
             <Card
-				title="Workshops"
-				desc="lorem epsum dolor sit amet"
-				image={workshop}
-				routing="/workshop"
+              title="Workshops"
+              desc="lorem epsum dolor sit amet"
+              image={workshop}
+              routing="/workshop"
             />
             <Card
               title="Events"
@@ -100,21 +118,39 @@ const Landing = () => {
           </div>
         </Zoom>
 
-          <div className="flex justify-center items-center">
-            <Zoom><img className="w-1/3 py-20 smm:w-1/2 md:w-2/3 lg:w-2/5" src={Speaker} alt="BandSlam" /></Zoom>
-            <Zoom delay={200}><img className="absolute px-96 sm:px-1 md:px-4 xl:px-40 xll:px-64" src={Bandslam} alt="BandSlam" /></Zoom>
-            <Zoom delay={400}><img className="absolute h-3/4 smm:h-3/5" src={Drums} alt="BandSlam" /></Zoom>
-          </div>
-    	</div>
-    	<Slider words={words}/>
-		<BackToTop
-			showOnScrollUp
-			showAt={100}
-			speed={1500}
-			easing="easeInOutQuint"
-			>
-			<AiOutlineArrowUp/>
-      	</BackToTop>
+        <div className="flex justify-center items-center">
+          <Zoom>
+            <img
+              className="w-1/3 py-20 smm:w-1/2 md:w-2/3 lg:w-2/5"
+              src={Speaker}
+              alt="BandSlam"
+            />
+          </Zoom>
+          <Zoom delay={200}>
+            <img
+              className="absolute px-96 sm:px-1 md:px-4 xl:px-40 xll:px-64"
+              src={Bandslam}
+              alt="BandSlam"
+            />
+          </Zoom>
+          <Zoom delay={400}>
+            <img
+              className="absolute h-3/4 smm:h-3/5"
+              src={Drums}
+              alt="BandSlam"
+            />
+          </Zoom>
+        </div>
+      </div>
+      <Slider words={words} />
+      <BackToTop
+        showOnScrollUp
+        showAt={100}
+        speed={1500}
+        easing="easeInOutQuint"
+      >
+        <AiOutlineArrowUp />
+      </BackToTop>
     </div>
   );
 };
