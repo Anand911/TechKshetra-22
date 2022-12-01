@@ -1,4 +1,5 @@
 import Astronaut from "../assets/astro.png";
+import workshop from "../assets/workshops.svg";
 import Techtalk from "../assets/tech-talks-person.png";
 import Drums from "../assets/drums.svg";
 import Bandslam from "../assets/band-label.png";
@@ -51,9 +52,9 @@ const Landing = () => {
 
       <div className="mt-40 px-20 z-10 smm:mt-96 smm:pt-52 md:px-1 md:pt-96 md:mt-96 lg:mt-80 xl:mt-72">
         <Zoom delay={400}>
-          <h2 className="uppercase font-bold text-9xl sm:text-2xl md:flex md:text-center sm:mt-14 sm:mb-8 sm:h-fit md:text-4xl md:h-96 md:items-end md:justify-center lg:text-7xl xl:text-8xl">
+          <h2 className="uppercase px-[6%] font-bold text-9xl sm:text-2xl md:flex md:text-center sm:mt-14 sm:mb-8 sm:h-fit md:text-4xl md:h-96 md:items-end md:justify-center lg:text-7xl xl:text-8xl">
             Biggest{" "}
-            <span className="mx-2 px-2 rounded-sm underline bg-white text-black">
+            <span className="inline-block mx-2 px-2 rounded-sm bg-white text-black">
               Techfest
             </span>{" "}
             in Kochi!
@@ -61,7 +62,7 @@ const Landing = () => {
         </Zoom>
 
         <div className="flex mx-80 my-20 smm:w-full md:m-1 lg:mx-4 xl:mx-20 xll:mx-32">
-          <img className="animate-blob smm:w-32" src={Astronaut} alt="Astronaut"/>
+          <img className="animate-[blob_5s_infinite] smm:w-32" src={Astronaut} alt="Astronaut"/>
           <div className="flex flex-col justify-center">
             <h3 className="my-3 text-3xl font-bold smm:text-lg">About Us</h3>
             <p className="pb-10 text-2xl smm:text-sm">
@@ -81,7 +82,7 @@ const Landing = () => {
             <Card
 				title="Workshops"
 				desc="lorem epsum dolor sit amet"
-				image={Techtalk}
+				image={workshop}
 				routing="/workshop"
             />
             <Card

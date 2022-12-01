@@ -14,3 +14,11 @@
   .animate {
     animation: scroll 15s linear infinite;
   }
+  .clip-card{
+    clip-path: polygon(12% 0, 88% 0, 100% 12%, 100% 100%, 0 100%, 0 12%);
+  }
+  .grid-card{
+    background-color: transparent;
+      background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .1) 25%, rgba(255, 255, 255, .1) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .1) 75%, rgba(255, 255, 255, .1) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .1) 25%, rgba(255, 255, 255, .1) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .1) 75%, rgba(255, 255, 255, .1) 76%, transparent 77%, transparent);
+      background-size: 50px 50px;
+  }
