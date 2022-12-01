@@ -30,11 +30,13 @@ const Header = () => {
         >
           TechTalks
         </Link>
-        <img
-          className="h-12 rounded-full mx-8 md:mx-1 md:mr-4 smm:h-8 smm:ml-4 sm:mr-2"
-          src={ProfilImage}
-          alt="profile"
-        />
+        <Link to="/login">
+          <img
+            className="h-12 rounded-full mx-8 md:mx-1 md:mr-4 smm:h-8 smm:ml-4 sm:mr-2"
+            src={ProfilImage}
+            alt="profile"
+          />
+        </Link>
       </div>
     </nav>
   );
