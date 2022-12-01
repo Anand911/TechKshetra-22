@@ -1,15 +1,32 @@
+import { useState, useEffect } from 'react';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 import { Link } from "react-router-dom";
 import { Button } from "@cred/neopop-web/lib/components";
-import { auth } from "../utilities/init-firebase"
 
 const Avatar = () => {
-    if(auth.currentUser)
+    const [photoURL, setPhotoURL] = useState("");
+
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            setPhotoURL(firebase.auth().currentUser.photoURL);
+        }
+    })
+
+    useEffect(() => {
+        const resetDP = firebase.auth().onAuthStateChanged(user => {
+          setPhotoURL("");
+        });
+        return () => resetDP();
+    }, []);
+
+    if(photoURL !== "")
         return (
             <div>
                 <Link to="/dashboard">
                     <img
                         className="h-12 rounded-full mx-8 md:mx-1 md:mr-4 smm:h-8 smm:ml-4 sm:mr-2"
-                        src={auth.currentUser.photoURL}
+                        src={photoURL}
                         alt="profile"
                     />
                 </Link>
