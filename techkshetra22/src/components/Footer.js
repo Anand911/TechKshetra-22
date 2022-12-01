@@ -1,6 +1,6 @@
 import {FaRegCopyright} from "react-icons/fa"
 import {MdEmail} from "react-icons/md"
-import {RiTrademarkFill, RiInstagramFill, RiYoutubeFill, RiMailFill} from "react-icons/ri"
+import {RiTrademarkFill, RiInstagramFill, RiYoutubeFill } from "react-icons/ri"
 
 const Footer = () => {
     return (

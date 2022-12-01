@@ -1,8 +1,8 @@
 import Slider from "./Slider";
-import ProfilImage from "../assets/profile.jpg";
 import RegisteredEvents from "./RegisteredEvents";
 import { Button } from "@cred/neopop-web/lib/components";
 import { Link } from "react-router-dom";
+import { auth } from "../utilities/init-firebase"
 
 const Dashboard = () => {
   const words = [
@@ -29,12 +29,12 @@ const Dashboard = () => {
             <div className="flex items-center">
                 <img
                     className="h-12 rounded-full mr-8"
-                    src={ProfilImage}
+                    src={auth.currentUser.photoURL}
                     alt="profile"
                 />
                 <div>
-                    <h4 className="text-3xl">John Doe</h4>
-                    <p>johndoe@example.com</p>
+                    <h4 className="text-3xl">{auth.currentUser.displayName}</h4>
+                    <p>{auth.currentUser.email}</p>
                 </div>
             </div>
             <Link to="/"><Button
@@ -42,6 +42,7 @@ const Dashboard = () => {
                 kind="elevated"
                 size="big"
                 colorMode="light"
+                onClick={() => auth.signOut()}
                 >
                 Logout
             </Button></Link>

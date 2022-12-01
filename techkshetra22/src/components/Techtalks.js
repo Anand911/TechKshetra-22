@@ -11,6 +11,7 @@ const Techtalks = () => {
         {Data.map((i) => {
           return (
             <EventCard
+              id={i.id}
               title={i.title}
               desc={i.desc}
               price={i.price}
