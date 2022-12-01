@@ -11,7 +11,7 @@ const Footer = () => {
             <RiTrademarkFill className="pb-1"/> 
             <p className="pl-2">2022</p>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center sm:hidden">
           <a href=""><RiInstagramFill size={32}/></a>
           <a href=""><RiYoutubeFill size={36}/></a>
           <a href=""><MdEmail size={36}/></a>

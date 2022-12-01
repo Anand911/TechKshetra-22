@@ -22,14 +22,22 @@
   background-position: 0 100%;
 }
 
-.gridPattern {
-    height: 100%;
-    width: 100%;
-    margin: 0;
+.noise::after {
+  content:"";
+  position: fixed;
+  opacity: 0.7;
+  width: 200%;
+  height: 200%;
+  left: -50%;
+  top: -50%;
+  animation: grain 1s steps(4) infinite;
+  background-image: url(https://v2.bepatrickdavid.com/assets/img/movie.png)
 }
-.gridPattern {
-    background-image:
-      repeating-linear-gradient(rgb(122, 122, 122) 0 1px, transparent 1px 100%),
-      repeating-linear-gradient(90deg, rgb(122, 122, 122) 0 1px, transparent 1px 100%);
-    background-size: 71px 71px;
+@keyframes grain {
+  0%, 100% {transform: translate(0,0);}
+  10% {transform: translate(-5%,-5%);}
+  30% {transform: translate(5%,-10%);}
+  50% {transform: translate(-10%,5%);}
+  70% {transform: translate(0%,10%);}
+  90% {transform: translate(10%,5%);}
 }
