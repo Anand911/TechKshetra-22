@@ -12,9 +12,9 @@ const Footer = () => {
             <p className="pl-2">2022</p>
         </div>
         <div className="flex items-center sm:hidden">
-          <a href=""><RiInstagramFill size={32}/></a>
-          <a href=""><RiYoutubeFill size={36}/></a>
-          <a href=""><MdEmail size={36}/></a>
+          <a href="https://www.instagram.com/techkshetra2022/"><RiInstagramFill size={32}/></a>
+          <a href="https://www.youtube.com/channel/UCwBXpl2AF_3N5F-H3JO0yLw"><RiYoutubeFill size={36}/></a>
+          <a href="mailto: office@rajagiritech.edu.in"><MdEmail size={36}/></a>
         </div>
         <div>
             <p className="uppercase font-semibold text-right" >Biggest <span className="px-1 rounded-sm underline bg-white text-black">Techfest</span> in Kochi!</p>

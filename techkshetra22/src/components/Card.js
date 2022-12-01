@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Card = ({ title, desc, image, routing }) => {
   return (
     <div className="text-black w-76 flex flex-col justify-around h-full m-4 border-[0.5rem] border-white grid-card">
-      <img className="w-72 ml-10" src={image} alt="poster"/>
+      <img className="w-72 ml-10 transition ease-in-out hover:-translate-y-3.5" src={image} alt="poster"/>
       <div className="bg-white">
         <h4 className="my-2 text-3xl font-bold">{title}</h4>
         <p className="pb-3 text-2xls">{desc}</p>

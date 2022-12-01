@@ -8,6 +8,7 @@ import Workshop from "./components/Workshop";
 import ProgressBar from "react-scroll-progress-bar";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/techtalks" element={<Techtalks />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
         <Header />
         <Footer />

@@ -1,6 +1,6 @@
 import Astronaut from "../assets/astro.png";
 import workshop from "../assets/workshops.svg";
-import Techtalk from "../assets/tech-talks-person.png";
+import Techtalk from "../assets/tech-talks-person-rounded.png";
 import Drums from "../assets/drums.svg";
 import Bandslam from "../assets/band-label.png";
 import Speaker from "../assets/speaker.svg";

@@ -18,7 +18,7 @@ module.exports = {
           },
 
           "50%": {
-            transform: "translateY(50px)",
+            transform: "translateY(-50px)",
             rotate: "0deg",
           },
 
