@@ -31,6 +31,9 @@ module.exports = {
           "100%": { left: "125%" },
         },
       },
+      backgroundImage: {
+        'noise': "url('https://v2.bepatrickdavid.com/assets/img/movie.png')",
+      },
     },
     screens: {
       // using max-width instead of default min-width
