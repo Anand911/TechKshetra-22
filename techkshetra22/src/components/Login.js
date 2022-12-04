@@ -7,7 +7,7 @@ import 'firebase/compat/auth';
 const firebaseConfig = {
 };
 
-firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 
 // Configure FirebaseUI.
 const uiConfig = {
@@ -50,4 +50,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export { Login, app };

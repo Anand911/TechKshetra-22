@@ -1,10 +1,46 @@
-import React from "react";
 import React3D from "../assets/google.png";
 import { Button } from '@cred/neopop-web/lib/components';
+import { app } from './Login';
+import { doc, setDoc, getFirestore } from "firebase/firestore";
+import { useState } from 'react';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 
-export const EventCard = ({ id, title, desc, price }) => {
+const db = getFirestore(app)
 
-  // send - uid, id
+const write = async ( UID, id, price ) => {
+  try {
+    const docRef = await setDoc(doc(db, "Registration", UID + "/" + id + "/Payment"), {
+		amount : price,
+		status : "paid",
+		timestamp : Date.now(),
+		transactionID : ""
+    });
+    console.log("Collection written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding Collection: ", e);
+  }
+
+  try {
+    const docRef = await setDoc(doc(db, "Registration", UID), {
+		[id] : true
+    }, {merge : true});
+    console.log("Registration list item appended with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error appending list item: ", e);
+  }
+
+  window.location.reload();
+}
+
+const EventCard = ({ id, title, desc, price, status }) => {
+  const [UID, setUID] = useState("");
+
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        setUID(firebase.auth().currentUser.uid);
+    }
+  })
 
   return (
     <div className="bg-white w-72 h-[23em] flex flex-col items-center rounded-[0.2em] my-16 mx-10">
@@ -25,11 +61,10 @@ export const EventCard = ({ id, title, desc, price }) => {
                     kind="elevated"
                     size="medium"
                     colorMode="dark"
-                    onClick={() => {
-                        console.log("I'm clicked");
-                    }}
+                    onClick={() => write(UID, id, price)}
+                    disabled = {status === "Registered"}
                 >
-                Register
+                {status}
             </Button>
         </div>
       </div>

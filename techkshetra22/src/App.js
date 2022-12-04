@@ -7,7 +7,7 @@ import Techtalks from "./components/Techtalks";
 import Workshop from "./components/Workshop";
 import ProgressBar from "react-scroll-progress-bar";
 import Footer from "./components/Footer";
-import Login from "./components/Login";
+import { Login } from "./components/Login";
 import Dashboard from "./components/Dashboard";
 
 function App() {
