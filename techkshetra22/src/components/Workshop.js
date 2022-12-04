@@ -34,15 +34,15 @@ const Workshop = () => {
 		<div className="pt-24">
 			<Slider words={words}/>
 			<div className="flex flex-wrap justify-center pt-4">
-			{Data.map((i) => {
+			{Object.keys(Data).map((key) => {
 				return (
-				<EventCard
-					id={i.id}
-					title={i.title}
-					desc={i.desc}
-					price={i.price}
-					status={Object.keys(CardStatus).includes(i.id) ? "Registered" : "Register"}
-				/>
+					<EventCard
+						id={key}
+						title={Data[key].title}
+						desc={Data[key].desc}
+						price={Data[key].price}
+						status={Object.keys(CardStatus).includes(key) ? "Registered" : "Register"}
+					/>
 				);
 			})}
 			</div>

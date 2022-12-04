@@ -43,8 +43,8 @@ const EventCard = ({ id, title, desc, price, status }) => {
   })
 
   return (
-    <div className="bg-white w-72 h-[23em] flex flex-col items-center rounded-[0.2em] my-16 mx-10">
-      <div className="bg-black w-[95%] h-[10em] flex items-center justify-center rounded-[0.2em] my-2">
+    <div className="bg-white w-72 h-[23em] flex flex-col items-center rounded-md my-16 mx-10">
+      <div className="bg-black w-[95%] h-[10em] flex items-center justify-center rounded-md my-2">
         <img
           className=" object-cover rounded-md relative bottom-[30%]"
           src={React3D}

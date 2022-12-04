@@ -1,44 +1,37 @@
-[
-    {
-        "id": "t1",
+{
+    "t1" : {
         "title": "Cloud Computing",
         "desc": "Innovians Technologies is a leading workshop provider on Cloud Computing. It's a five days workshop delivered by Industry expert on Cloud Computing.",
         "price": "500"
     },
-    {
-        "id": "t2",
+    "t2" : {
         "title": "Blob dingading",
         "desc": "Innovians Technologies is a leading workshop provider on Cloud Computing. It's a five days workshop delivered by Industry expert on Cloud Computing.",
         "price": "500"
     },
-    {
-        "id": "t3",
+    "t3" : {
         "title": "Cloud Computing",
         "desc": "Innovians Technologies is a leading workshop provider on Cloud Computing. It's a five days workshop delivered by Industry expert on Cloud Computing.",
         "price": "500"
     },
-    {
-        "id": "t4",
+    "t4" : {
         "title": "Blob dingading",
         "desc": "Innovians Technologies is a leading workshop provider on Cloud Computing. It's a five days workshop delivered by Industry expert on Cloud Computing.",
         "price": "500"
     },
-    {
-        "id": "t5",
+    "t5" : {
         "title": "Cloud Computing",
         "desc": "Innovians Technologies is a leading workshop provider on Cloud Computing. It's a five days workshop delivered by Industry expert on Cloud Computing.",
         "price": "500"
     },
-    {
-        "id": "t6",
+    "t6" : {
         "title": "Blob dingading",
         "desc": "Innovians Technologies is a leading workshop provider on Cloud Computing. It's a five days workshop delivered by Industry expert on Cloud Computing.",
         "price": "500"
     },
-    {
-        "id": "t7",
+    "t7" : {
         "title": "Blob dingading",
         "desc": "Innovians Technologies is a leading workshop provider on Cloud Computing. It's a five days workshop delivered by Industry expert on Cloud Computing.",
         "price": "500"
     }
-]
+}
