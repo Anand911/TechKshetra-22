@@ -1,9 +1,5 @@
-
 const RegisteredEvents = () => {
-  return (
-    <div className="w-[40vw] h-96 bg-white">
-    </div>
-  );
+  return <div className="h-96 bg-white"></div>;
 };
 
 export default RegisteredEvents;
