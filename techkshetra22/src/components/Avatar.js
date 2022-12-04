@@ -5,48 +5,53 @@ import { Link } from "react-router-dom";
 import { Button } from "@cred/neopop-web/lib/components";
 
 const Avatar = () => {
-  const [photoURL, setPhotoURL] = useState("");
+    // Current user's photo url state variable
+	const [photoURL, setPhotoURL] = useState("");
 
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      setPhotoURL(firebase.auth().currentUser.photoURL);
-    }
-  });
+	// Set photo url state variable on login or session load
+	firebase.auth().onAuthStateChanged((user) => {
+		if (user) {
+			setPhotoURL(firebase.auth().currentUser.photoURL);
+		}
+	});
 
-  useEffect(() => {
-    const resetDP = firebase.auth().onAuthStateChanged((user) => {
-      setPhotoURL("");
-    });
-    return () => resetDP();
-  }, []);
+	// Remove user photo on logout
+	useEffect(() => {
+		const resetDP = firebase.auth().onAuthStateChanged((user) => {
+			setPhotoURL("");
+		});
+		return () => resetDP();
+	}, []);
 
-  if (photoURL !== "")
-    return (
-      <div>
-        <Link to="/dashboard">
-          <img
-            className="h-12 rounded-full mx-8 md:mx-1 md:mr-4 smm:h-8 smm:ml-4 sm:mr-2"
-            src={photoURL}
-            alt="profile"
-          />
-        </Link>
-      </div>
-    );
-  else
-    return (
-      <div>
-        <Link to="/login">
-          <Button
-            variant="primary"
-            kind="elevated"
-            size="big"
-            colorMode="light"
-          >
-            Login
-          </Button>
-        </Link>
-      </div>
-    );
+	// Show Login button to login page or user photo to dashboard page
+	if (photoURL !== "") {
+		return (
+		<div>
+			<Link to="/dashboard">
+			<img
+				className="h-12 rounded-full mx-8 md:mx-1 md:mr-4 smm:h-8 smm:ml-4 sm:mr-2"
+				src={photoURL}
+				alt="profile"
+			/>
+			</Link>
+		</div>
+		);
+	} else {
+		return (
+			<div>
+				<Link to="/login">
+				<Button
+					variant="primary"
+					kind="elevated"
+					size="big"
+					colorMode="light"
+				>
+					Login
+				</Button>
+				</Link>
+			</div>
+		);
+	}
 };
 
 export default Avatar;

@@ -8,7 +8,10 @@ import 'firebase/compat/auth';
 
 const db = getFirestore(app)
 
+// Function to write registration to Firestore
 const write = async ( UID, id, price ) => {
+
+	// Write item as collection with payment data
 	try {
 		const docRef = await setDoc(doc(db, "Registration", UID + "/" + id + "/Payment"), {
 			amount : price,
@@ -21,6 +24,7 @@ const write = async ( UID, id, price ) => {
 		console.error("Error adding Collection: ", e);
 	}
 
+	// Write item as document
 	try {
 		const docRef = await setDoc(doc(db, "Registration", UID), {
 			[id] : true
@@ -30,45 +34,51 @@ const write = async ( UID, id, price ) => {
 		console.error("Error appending list item: ", e);
 	}
 
+	// Reload on register to update button state
 	window.location.reload();
 }
 
 const EventCard = ({ id, title, desc, price, status }) => {
-  const [UID, setUID] = useState("");
 
-  firebase.auth().onAuthStateChanged(user => {
-    if (user) {
-        setUID(firebase.auth().currentUser.uid);
-    }
-  })
+	// State variable for current user's UID
+	const [UID, setUID] = useState("");
 
-  return (
-    <div className="bg-white w-72 h-[23em] flex flex-col items-center rounded-md my-16 mx-10">
-      <div className="bg-black w-[95%] h-[10em] flex items-center justify-center rounded-md my-2">
-        <img
-          className=" object-cover rounded-md relative bottom-[30%]"
-          src={React3D}
-          alt="card"
-        />
-      </div>
-      <h3 className="text-black text-2xl font-bold">{title}</h3>
-      <p className="text-black text-justify w-[95%] text-sm my-2 pb-2">{desc}</p>
-      <div className="flex justify-between items-baseline w-full px-2">
-        <h3 className="text-black text-2xl font-extrabold">₹{price}</h3>
-        <div className="mb-4">
-                <Button
-                    variant="primary"
-                    kind="elevated"
-                    size="medium"
-                    colorMode="dark"
-                    onClick={() => write(UID, id, price)}
-                    disabled = {status === "Registered"}
-                >
-                {status}
-            </Button>
-        </div>
-      </div>
-    </div>
-  );
+	firebase.auth().onAuthStateChanged(user => {
+		if (user) {
+			// Update state variable
+			setUID(firebase.auth().currentUser.uid);
+		}
+	})
+
+	return (
+		<div className="bg-white w-72 h-[23em] flex flex-col items-center rounded-md my-16 mx-10">
+			<div className="bg-black w-[95%] h-[10em] flex items-center justify-center rounded-md my-2">
+				<img
+				className=" object-cover rounded-md relative bottom-[30%]"
+				src={React3D}
+				alt="card"
+				/>
+			</div>
+			<h3 className="text-black text-2xl font-bold">{title}</h3>
+			<p className="text-black text-justify w-[95%] text-sm my-2 pb-2">{desc}</p>
+			<div className="flex justify-between items-baseline w-full px-2">
+				<h3 className="text-black text-2xl font-extrabold">₹{price}</h3>
+				<div className="mb-4">
+					<Button
+						variant="primary"
+						kind="elevated"
+						size="medium"
+						colorMode="dark"
+						onClick={() => write(UID, id, price)}
+						// Disable button if item already registered
+						disabled = {status === "Registered"}
+					>
+						{status}
+					</Button>
+				</div>
+			</div>
+		</div>
+	);
 };
+
 export default EventCard;

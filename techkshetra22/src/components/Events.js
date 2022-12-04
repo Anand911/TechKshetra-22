@@ -10,13 +10,18 @@ import 'firebase/compat/auth';
 const db = getFirestore(app)
 
 const Events = () => {
+    // Current user state variables
 	const [UID, setUID] = useState("");
 	const [CardStatus, setCardStatus] = useState({});
 
 	useEffect(() => {
         firebase.auth().onAuthStateChanged(user => {
 			if (user) {
+
+                // Set UID state variable
 				setUID(firebase.auth().currentUser.uid);
+
+				// Get all registered event IDs from Firestore and store into CardStatus(Object)
 				try {
 					getDoc(doc(db, "Registration", UID)).then((value) => {
 						setCardStatus(value.data());
@@ -28,27 +33,29 @@ const Events = () => {
         });
     }, [UID]);
 
-  const words = ["EVENTS", "*", "EVENTS","*", "EVENTS", "*", "EVENTS", "*", "EVENTS", "*", "EVENTS", "*",];
+	const words = ["EVENTS", "*", "EVENTS","*", "EVENTS", "*", "EVENTS", "*", "EVENTS", "*", "EVENTS", "*",];
 
-  return (
-    <div className="pt-24">
-		<Slider words={words}/>
-		<div className="flex flex-wrap justify-center pt-4">
-		{Object.keys(Data).map((key) => {
-					return (
-						<EventCard
-							id={key}
-							title={Data[key].title}
-							desc={Data[key].desc}
-							price={Data[key].price}
-							status={Object.keys(CardStatus).includes(key) ? "Registered" : "Register"}
-						/>
-					);
-				})}
+	return (
+		<div className="pt-24">
+			<Slider words={words}/>
+			<div className="flex flex-wrap justify-center pt-4">
+			{// Map each workshop into an EventCard component
+			Object.keys(Data).map((key) => {
+				return (
+					<EventCard
+						id={key}
+						title={Data[key].title}
+						desc={Data[key].desc}
+						price={Data[key].price}
+						// Pass status of card, ie; registered or not
+						status={Object.keys(CardStatus).includes(key) ? "Registered" : "Register"}
+					/>
+				);
+			})}
+			</div>
+			<Slider words={words}/>
 		</div>
-		<Slider words={words}/>
-    </div>
-  );
+	);
 };
 
 export default Events;

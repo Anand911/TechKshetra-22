@@ -42,8 +42,8 @@ const Login = () => {
 		<img src={React3D} className="h-16" alt="google" />
 		<h3>Login/Signup with Google</h3>
 		<StyledFirebaseAuth
-		uiConfig={uiConfig}
-		firebaseAuth={firebase.auth()}
+			uiConfig={uiConfig}
+			firebaseAuth={firebase.auth()}
 		/>
 	</div>
 	<Slider words={words} />

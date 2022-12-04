@@ -14,6 +14,7 @@ import "firebase/compat/auth";
 const db = getFirestore(app)
 
 const Dashboard = () => {
+    // Current user state variables
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [photoURL, setPhotoURL] = useState("");
@@ -23,19 +24,20 @@ const Dashboard = () => {
 	useEffect(() => {
         firebase.auth().onAuthStateChanged(user => {
 			if (user) {
+                // Set state variables
                 setUID(firebase.auth().currentUser.uid);
                 setName(firebase.auth().currentUser.displayName);
                 setEmail(firebase.auth().currentUser.email);
                 setPhotoURL(firebase.auth().currentUser.photoURL);
+
+                // Get all registered event IDs from Firestore and store into CardStatus(Object)
 				try {
 					getDoc(doc(db, "Registration", UID)).then((value) => {
-                        // console.log(Workshops)
 						setCardStatus(value.data());
 					});
 				} catch (e) {
 					console.error("Error retrieving document: ", e);
 				}
-                // console.log(email, photoURL, UID, CardStatus);
 			}
         });
     }, [UID]);
@@ -86,7 +88,10 @@ const Dashboard = () => {
                 <div>
                     <h4 className="text-4xl font-bold my-10">Registered Events</h4>
                     <div>
-                        {Object.keys(CardStatus).length === 0 ? <div className="text-center p-24">Looks like you haven't registered for anything</div> : Object.keys(CardStatus).map((key) => {
+                        {// Render RegisteredEvents Component for each registered item
+                        Object.keys(CardStatus).length === 0 ? <div className="text-center p-24">Looks like you haven't registered for anything</div> : Object.keys(CardStatus).map((key) => {
+
+                            // Render registered workshops
                             if(key.charAt(0) === "w") {
                                 try {
                                     return <RegisteredEvents category="Workshop" name={Workshops[key]["title"]}/>
@@ -94,6 +99,8 @@ const Dashboard = () => {
                                     console.log(e);
                                     return "nothing"
                                 }
+                            
+                            // Render registered events
                             } else if(key.charAt(0) === "e") {
                                 try {
                                     return <RegisteredEvents category="Event" name={Events[key]["title"]}/>
@@ -101,6 +108,8 @@ const Dashboard = () => {
                                     console.log(e);
                                     return "nothing"
                                 }
+                                
+                            // Render registered tech talks
                             } else {
                                 try {
                                     return <RegisteredEvents category="Techtalk" name={Techtalks[key]["title"]}/>
