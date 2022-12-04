@@ -47,7 +47,7 @@ const Techtalks = () => {
 								title={Data[key].title}
 								desc={Data[key].desc}
 								price={Data[key].price}
-								status={Object.keys(CardStatus).includes(key) ? "Registered" : "Register"}
+								status={CardStatus && Object.keys(CardStatus).includes(key) ? "Registered" : "Register"}
 							/>
 						);
 					})}

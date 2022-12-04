@@ -48,7 +48,7 @@ const Events = () => {
 						desc={Data[key].desc}
 						price={Data[key].price}
 						// Pass status of card, ie; registered or not
-						status={Object.keys(CardStatus).includes(key) ? "Registered" : "Register"}
+						status={CardStatus && Object.keys(CardStatus).includes(key) ? "Registered" : "Register"}
 					/>
 				);
 			})}

@@ -57,6 +57,46 @@ const Dashboard = () => {
         "*",
     ];
 
+    let content = []
+
+    try {// Render RegisteredEvents Component for each registered item
+        if(Object.keys(CardStatus).length === 0) {
+            content = [...content, <div className="text-center p-24">Looks like you haven't registered for anything</div>]
+        } else {
+            Object.keys(CardStatus).forEach((key) => {
+
+                // Render registered workshops
+                if(key.charAt(0) === "w") {
+                    try {
+                        content = [...content, <RegisteredEvents category="Workshop" name={Workshops[key]["title"]}/>]
+                    } catch (e) {
+                        console.log(e);
+                    }
+                
+                // Render registered events
+                } else if(key.charAt(0) === "e") {
+                    try {
+                        content = [...content, <RegisteredEvents category="Event" name={Events[key]["title"]}/>]
+                    } catch (e) {
+                        console.log(e);
+                    }
+                    
+                // Render registered tech talks
+                } else {
+                    try {
+                        content = [...content, <RegisteredEvents category="Techtalk" name={Techtalks[key]["title"]}/>]
+                    } catch (e) {
+                        console.log(e);
+                    }
+                }
+            })
+        }
+    } catch(e) {
+        console.log(e);
+        content = [...content, <div className="text-center p-24">Looks like you haven't registered for anything</div>]
+    }
+        
+
     return (
         <div className="w-full mt-24">
             <Slider words={words} />
@@ -88,37 +128,7 @@ const Dashboard = () => {
                 <div>
                     <h4 className="text-4xl font-bold my-10">Registered Events</h4>
                     <div>
-                        {// Render RegisteredEvents Component for each registered item
-                        Object.keys(CardStatus).length === 0 ? <div className="text-center p-24">Looks like you haven't registered for anything</div> : Object.keys(CardStatus).map((key) => {
-
-                            // Render registered workshops
-                            if(key.charAt(0) === "w") {
-                                try {
-                                    return <RegisteredEvents category="Workshop" name={Workshops[key]["title"]}/>
-                                } catch (e) {
-                                    console.log(e);
-                                    return "nothing"
-                                }
-                            
-                            // Render registered events
-                            } else if(key.charAt(0) === "e") {
-                                try {
-                                    return <RegisteredEvents category="Event" name={Events[key]["title"]}/>
-                                } catch (e) {
-                                    console.log(e);
-                                    return "nothing"
-                                }
-                                
-                            // Render registered tech talks
-                            } else {
-                                try {
-                                    return <RegisteredEvents category="Techtalk" name={Techtalks[key]["title"]}/>
-                                } catch (e) {
-                                    console.log(e);
-                                    return "nothing"
-                                }
-                            }
-                        })}
+                        {content.map((value) => {return (value)})}
                     </div>
                 </div>
             </div>

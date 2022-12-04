@@ -13,7 +13,7 @@ import Dashboard from "./components/Dashboard";
 function App() {
   return (
     <BrowserRouter>
-      <div className="bg-black text-slate-100 overflow-hidden">
+      <div className="bg-black text-slate-100 overflow-hidden scroll-smooth">
         <ProgressBar bgcolor="white" />
         <Routes>
           <Route path="/" element={<Landing />} />
