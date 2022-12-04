@@ -86,7 +86,7 @@ const Dashboard = () => {
                 <div>
                     <h4 className="text-4xl font-bold my-10">Registered Events</h4>
                     <div>
-                        {Object.keys(CardStatus).map((key) => {
+                        {Object.keys(CardStatus).length === 0 ? <div className="text-center p-24">Looks like you haven't registered for anything</div> : Object.keys(CardStatus).map((key) => {
                             if(key.charAt(0) === "w") {
                                 try {
                                     return <RegisteredEvents category="Workshop" name={Workshops[key]["title"]}/>
