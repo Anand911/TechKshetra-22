@@ -5,7 +5,13 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 
 const firebaseConfig = {
-  //firebase API key
+  apiKey: "AIzaSyC5JtK5ADTrUkB9wLHkgz3shODRdvzgI2M",
+  authDomain: "techkshetra-7fdd.firebaseapp.com",
+  projectId: "techkshetra-7fdd",
+  storageBucket: "techkshetra-7fdd.appspot.com",
+  messagingSenderId: "498066870222",
+  appId: "1:498066870222:web:8af9fc696ebf518b66259f",
+  measurementId: "G-S0ZLDYQC86"
 };
 
 const app = firebase.initializeApp(firebaseConfig);

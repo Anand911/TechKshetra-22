@@ -9,28 +9,28 @@ import 'firebase/compat/auth';
 const db = getFirestore(app)
 
 const write = async ( UID, id, price ) => {
-  try {
-    const docRef = await setDoc(doc(db, "Registration", UID + "/" + id + "/Payment"), {
-		amount : price,
-		status : "paid",
-		timestamp : Date.now(),
-		transactionID : ""
-    });
-    console.log("Collection written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding Collection: ", e);
-  }
+	try {
+		const docRef = await setDoc(doc(db, "Registration", UID + "/" + id + "/Payment"), {
+			amount : price,
+			status : "paid",
+			timestamp : Date.now(),
+			transactionID : ""
+		});
+		console.log("Collection written with ID: ", docRef.id);
+	} catch (e) {
+		console.error("Error adding Collection: ", e);
+	}
 
-  try {
-    const docRef = await setDoc(doc(db, "Registration", UID), {
-		[id] : true
-    }, {merge : true});
-    console.log("Registration list item appended with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error appending list item: ", e);
-  }
+	try {
+		const docRef = await setDoc(doc(db, "Registration", UID), {
+			[id] : true
+		}, {merge : true});
+		console.log("Registration list item appended with ID: ", docRef.id);
+	} catch (e) {
+		console.error("Error appending list item: ", e);
+	}
 
-  window.location.reload();
+	window.location.reload();
 }
 
 const EventCard = ({ id, title, desc, price, status }) => {
