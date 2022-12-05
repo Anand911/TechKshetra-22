@@ -12,24 +12,37 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex smm:items-center">
-        <Link
-          to="/workshop"
-          className="p-4 mx-6 link link-underline link-underline-black md:mx-1 smm:text-[12px] smm:px-0 sm:text-[13px]"
-        >
-          Workshops
-        </Link>
-        <Link
-          to="/events"
-          className="p-4 mx-6 link link-underline link-underline-black md:mx-1 smm:text-[12px] smm:px-0 sm:text-[13px]"
-        >
-          Events
-        </Link>
-        <Link
-          to="/techtalks"
-          className="p-4 mx-6 link link-underline link-underline-black md:mx-1 smm:text-[12px] smm:px-0 sm:text-[13px]"
-        >
-          TechTalks
-        </Link>
+        <ul className="flex smm:items-center">
+          <li>
+            <Link
+              to="/workshop"
+              className="block p-4 mx-6 link link-underline link-underline-black md:mx-1 smm:text-[12px] smm:px-0 sm:text-[13px]"
+            >
+              Workshops
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/events"
+              className="block p-4 mx-6 link link-underline link-underline-black md:mx-1 smm:text-[12px] smm:px-0 sm:text-[13px]"
+            >
+              Events
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/techtalks"
+              className="block p-4 mx-6 link link-underline link-underline-black md:mx-1 smm:text-[12px] smm:px-0 sm:text-[13px]"
+            >
+              TechTalks
+            </Link>
+          </li>
+
+
+        </ul>
+        
+        
+        
         <Avatar />
       </div>
     </nav>

@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "@cred/neopop-web": "^1.0.0",
+    "@flaticon/flaticon-uicons": "^1.7.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "firebase": "^9.14.0",
+    "gsap": "^3.11.3",
     "react": "^18.2.0",
     "react-back-to-top-button": "^0.0.14",
     "react-dom": "^18.2.0",

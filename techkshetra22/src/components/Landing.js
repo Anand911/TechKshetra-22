@@ -1,5 +1,6 @@
 import Astronaut from "../assets/astro.png";
 import workshop from "../assets/workshops.svg";
+import events from "../assets/events.svg";
 import Techtalk from "../assets/tech-talks-person-rounded.png";
 import Drums from "../assets/drums.svg";
 import Bandslam from "../assets/band-label.png";
@@ -75,23 +76,23 @@ const Landing = () => {
 				</h2>
 				</Zoom>
 
-				<div className="flex mx-80 my-20 smm:w-full md:m-1 lg:mx-4 xl:mx-20 xll:mx-32">
+				<div className="flex mx-80 my-20 smm:w-full md:m-1 sm:my-20 lg:mx-4 xl:mx-20 xll:mx-32">
 				<img
 					className="animate-[blob_5s_infinite] smm:w-32"
 					src={Astronaut}
 					alt="Astronaut"
 				/>
-				<div className="flex flex-col justify-center">
+				<div className="flex flex-col justify-center sm:pr-4">
 					<h3 className="my-3 text-3xl font-bold smm:text-lg">About Us</h3>
-					<p className="pb-10 text-2xl smm:text-sm">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magnaaliqua.
+					<p className="pb-10 text-2xl smm:text-sm text-justify">
+							Techkshetra 2022, the biennial technical festival of Rajagiri School of Engineering and Technology,
+							 Kakkanad, Kerala is a treasure trove of a wide range of events that bring together students of all fields for a day like no other. A group of tech driven students started a fiesta in the beginning of a new century and called it Techkshetra which translates to "Temple for Technology".
 					</p>
 				</div>
 				</div>
 
 				<div>
-				<h3 className="mx-44 text-4xl font-semibold uppercase smm:text-xl md:mx-1 md:text-center sm:text-2xl">
+				<h3 className="mx-44 text-5xl font-semibold uppercase smm:text-xl md:mx-1 md:text-center sm:text-2xl">
 					What's in store for you?
 				</h3>
 				</div>
@@ -99,19 +100,19 @@ const Landing = () => {
 				<div className="flex justify-between w-full px-32 py-20 smm:px-4 smm:py-1 lg:px-4 lg:flex-wrap lg:justify-center lg:py-6 xll:px-10">
 					<Card
 					title="Workshops"
-					desc="lorem epsum dolor sit amet"
+						desc="Get first hand experience and learn from quality workshops which fare across a wide area of interests."
 					image={workshop}
 					routing="/workshop"
 					/>
 					<Card
 					title="Events"
-					desc="lorem epsum dolor sit amet"
-					image={Techtalk}
+						desc="Unleash your competitive spirit by participating in 30+ competitions and get a chance to win exciting prices."
+					image={events}
 					routing="/events"
 					/>
 					<Card
 					title="Tech Talks"
-					desc="lorem epsum dolor sit amet"
+					desc="Proficient speakers will guide us to expand our knowledge, so get ready to take notes which will leave an impact for life. "
 					image={Techtalk}
 					routing="/techtalks"
 					/>

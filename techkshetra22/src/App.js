@@ -9,6 +9,7 @@ import ProgressBar from "react-scroll-progress-bar";
 import Footer from "./components/Footer";
 import { Login } from "./components/Login";
 import Dashboard from "./components/Dashboard";
+import Loader from "./components/Loader";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Header />
         <Footer />
       </div>
+      <Loader/>
     </BrowserRouter>
   );
 }
