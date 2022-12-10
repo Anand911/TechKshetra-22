@@ -1,13 +1,13 @@
 import Astronaut from "../assets/astro.png";
-import workshop from "../assets/workshops.svg";
-import events from "../assets/events.svg";
+import workshop from "../assets/workshops-min.png";
+import events from "../assets/events-min.png";
 import Techtalk from "../assets/tech-talks-person-rounded.png";
-import Drums from "../assets/drums.svg";
+import Drums from "../assets/drums-min.png";
 import Bandslam from "../assets/band-label.png";
 import Speaker from "../assets/speaker.svg";
-import BgVideo from "../assets/purple-lights.mp4";
-import Ticket from "../assets/Ticket.svg";
-import TicketMob from "../assets/TicketMobile.svg";
+import BgVideo from "../assets/purple-lights-min.mp4";
+import Ticket from "../assets/Ticket.png";
+import TicketMob from "../assets/TicketMobile.png";
 import ScrollGif from "../assets/scroll_anim1.gif";
 import Card from "./Card";
 import React, { useRef } from "react";
@@ -43,30 +43,30 @@ const Landing = () => {
 				autoPlay
 				loop
 				muted
-				className="object-cover h-5/6 -z-40 opacity-20"
+				className="object-cover h-5/6 pt-24 -z-40 opacity-20"
 				/>
 				<div className="absolute w-full pt-24 top-0">
-				<div className="h-content m-auto pt-28 w-3/4 smm:pt-10 sm:py-6 md:pt-8">
-					<Tilt tiltMaxAngleX={3} tiltMaxAngleY={3} gyroscope={true}>
-					<img src={Ticket} alt="Teckshetra Ticket" className="md:hidden" />
+					<div className="h-content m-auto pt-28 w-3/4 smm:pt-10 sm:py-6 md:pt-8">
+						<Tilt tiltMaxAngleX={3} tiltMaxAngleY={3} gyroscope={true}>
+						<img src={Ticket} alt="Teckshetra Ticket" className="md:hidden" />
+						<img
+							src={TicketMob}
+							alt="Teckshetra Ticket"
+							className="hidden mx-auto md:block"
+						/>
+						</Tilt>
+					</div>
 					<img
-						src={TicketMob}
-						alt="Teckshetra Ticket"
-						className="hidden mx-auto md:block"
+						className="m-auto py-20 w-14 sm:hidden"
+						src={ScrollGif}
+						alt="scroll wheel"
 					/>
-					</Tilt>
-				</div>
-				<img
-					className="m-auto py-20 w-14 sm:hidden"
-					src={ScrollGif}
-					alt="scroll wheel"
-				/>
-				<Slider words={words} />
+					<Slider words={words} />
 				</div>
 			</div>
 
-			<div className="mt-40 px-20 z-10 smm:mt-96 smm:pt-52 md:px-1 md:pt-96 md:mt-96 lg:mt-80 xl:mt-72">
-				<Zoom delay={400}>
+			<div className="mt-60 px-20 z-10 smm:mt-96 smm:pt-52 md:px-1 md:pt-96 md:mt-96 lg:mt-80 xl:mt-72">
+				<Zoom delay={2000}>
 				<h2 className="uppercase px-[6%] font-bold text-9xl sm:text-2xl md:flex md:text-center sm:mt-14 sm:mb-8 sm:h-fit md:text-4xl md:h-96 md:items-end md:justify-center lg:text-7xl xl:text-8xl">
 					Biggest{" "}
 					<span className="inline-block mx-2 px-2 rounded-sm bg-white text-black">
@@ -100,19 +100,19 @@ const Landing = () => {
 				<div className="flex justify-between w-full px-32 py-20 smm:px-4 smm:py-1 lg:px-4 lg:flex-wrap lg:justify-center lg:py-6 xll:px-10">
 					<Card
 					title="Workshops"
-						desc="Get first hand experience and learn from quality workshops which fare across a wide area of interests."
+					desc="Get first hand experience and learn from the best across a wide area of interests."
 					image={workshop}
 					routing="/workshop"
 					/>
 					<Card
 					title="Events"
-						desc="Unleash your competitive spirit by participating in 30+ competitions and get a chance to win exciting prices."
+					desc="Unleash your competitive spirit in 30+ competitions and get a chance to win exciting prices."
 					image={events}
 					routing="/events"
 					/>
 					<Card
 					title="Tech Talks"
-					desc="Proficient speakers will guide us to expand our knowledge, so get ready to take notes which will leave an impact for life. "
+					desc="Talks that teach. Talks that inspire. Get ready to leave an impact on your life. "
 					image={Techtalk}
 					routing="/techtalks"
 					/>

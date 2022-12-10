@@ -38,7 +38,7 @@ const Workshop = () => {
 	return (
 		<div className="pt-24">
 			<Slider words={words}/>
-			<div className="flex flex-wrap justify-center pt-4">
+			<div className="flex flex-wrap justify-center pt-12">
 			{// Map each workshop into an EventCard component
 			Object.keys(Data).map((key) => {
 				return (

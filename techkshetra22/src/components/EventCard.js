@@ -59,22 +59,24 @@ const EventCard = ({ id, title, desc, price, status }) => {
 				alt="card"
 				/>
 			</div>
-			<h3 className="text-black text-2xl font-bold">{title}</h3>
-			<p className="text-black text-justify w-[95%] text-sm my-2 pb-2">{desc}</p>
-			<div className="flex justify-between items-baseline w-full px-2">
-				<h3 className="text-black text-2xl font-extrabold">₹{price}</h3>
-				<div className="mb-4">
-					<Button
-						variant="primary"
-						kind="elevated"
-						size="medium"
-						colorMode="dark"
-						onClick={() => write(UID, id, price)}
-						// Disable button if item already registered
-						disabled = {status === "Registered"}
-					>
-						{status}
-					</Button>
+			<div className="w-[93%]">
+				<h3 className="text-black text-2xl uppercase font-bold mt-1">{title}</h3>
+				<p className="text-black text-justify text-md my-2 pb-2">{desc}</p>
+				<div className="flex justify-between items-baseline">
+					<h3 className="text-black text-2xl font-extrabold">₹{price}</h3>
+					<div className="mb-4">
+						<Button
+							variant="primary"
+							kind="elevated"
+							size="medium"
+							colorMode="dark"
+							onClick={() => write(UID, id, price)}
+							// Disable button if item already registered
+							disabled = {status === "Registered"}
+						>
+							{status}
+						</Button>
+					</div>
 				</div>
 			</div>
 		</div>
