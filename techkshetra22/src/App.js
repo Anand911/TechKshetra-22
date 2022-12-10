@@ -10,6 +10,10 @@ import Footer from "./components/Footer";
 import { Login } from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import Loader from "./components/Loader";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import TermsOfService from "./components/TermsOfService";
+import CustomerSupport from "./components/CustomerSupport";
+import RefundPolicy from "./components/RefundPolicy";
 
 function App() {
   return (
@@ -23,11 +27,15 @@ function App() {
           <Route path="/techtalks" element={<Techtalks />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/termsofservice" element={<TermsOfService />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/customersupport" element={<CustomerSupport />} />
+          <Route path="/refundpolicy" element={<RefundPolicy />} />
         </Routes>
         <Header />
         <Footer />
       </div>
-      <Loader/>
+      <Loader />
     </BrowserRouter>
   );
 }

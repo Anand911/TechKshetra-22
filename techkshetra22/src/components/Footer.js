@@ -5,6 +5,7 @@ import {
   RiInstagramFill,
   RiYoutubeFill,
 } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -25,6 +26,14 @@ const Footer = () => {
         <a href="mailto: office@rajagiritech.edu.in">
           <MdEmail size={36} className="sm:h-6" />
         </a>
+      </div>
+      <div>
+        <Link to="/termsofservice" className="pr-4 underline">
+          Terms of Service
+        </Link>
+        <Link to="/privacypolicy" className="underline">
+          Privacy Policy
+        </Link>
       </div>
       <div>
         <p className="uppercase font-semibold text-right">
