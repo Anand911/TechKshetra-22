@@ -1,57 +1,57 @@
 import React3D from "../assets/google.png";
 import { Button } from '@cred/neopop-web/lib/components';
-import { app } from './Login';
-import { doc, setDoc, getFirestore } from "firebase/firestore";
+// import { app } from './Login';
+// import { doc, setDoc, getFirestore } from "firebase/firestore";
 import { useState } from 'react';
-import firebase from 'firebase/compat/app';
+// import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import { Link } from "react-router-dom";
 
-const db = getFirestore(app)
+// const db = getFirestore(app)
 
 // Function to write registration to Firestore
-const write = async ( UID, id, price ) => {
+// const write = async ( UID, id, price ) => {
 
-	// Write item as collection with payment data
+// 	// Write item as collection with payment data
 
-	// try {
-	// 	const docRef = await setDoc(doc(db, "Registration", UID + "/" + id + "/Payment"), {
-	// 		amount : price,
-	// 		status : "paid",
-	// 		timestamp : Date.now(),
-	// 		transactionID : ""
-	// 	});
-	// 	console.log("Collection written with ID: ", docRef.id);
-	// } catch (e) {
-	// 	console.error("Error adding Collection: ", e);
-	// }
+// 	try {
+// 		const docRef = await setDoc(doc(db, "Registration", UID + "/" + id + "/Payment"), {
+// 			amount : price,
+// 			status : "paid",
+// 			timestamp : Date.now(),
+// 			transactionID : ""
+// 		});
+// 		console.log("Collection written with ID: ", docRef.id);
+// 	} catch (e) {
+// 		console.error("Error adding Collection: ", e);
+// 	}
 
-	// Write item as document
-	try {
-		const docRef = await setDoc(doc(db, "Registration", UID), {
-			[id] : true
-		}, {merge : true});
-		console.log("Registration list item appended with ID: ", docRef.id);
-	} catch (e) {
-		console.error("Error appending list item: ", e);
-	}
+// 	// Write item as document
+// 	try {
+// 		const docRef = await setDoc(doc(db, "Registration", UID), {
+// 			[id] : true
+// 		}, {merge : true});
+// 		console.log("Registration list item appended with ID: ", docRef.id);
+// 	} catch (e) {
+// 		console.error("Error appending list item: ", e);
+// 	}
 
-	// Reload on register to update button state
-	window.location.reload();
-}
+// 	// Reload on register to update button state
+// 	window.location.reload();
+// }
 
 const EventCard = ({ id, title, desc, price, link, time, venue, long_desc, contact, status }) => {
 
 	// State variable for current user's UID
-	const [UID, setUID] = useState("");
+	// const [UID, setUID] = useState("");
 	const [isLoading, setLoading] = useState(false);
 
-	firebase.auth().onAuthStateChanged(user => {
-		if (user) {
-			// Update state variable
-			setUID(firebase.auth().currentUser.uid);
-		}
-	})
+	// firebase.auth().onAuthStateChanged(user => {
+	// 	if (user) {
+	// 		// Update state variable
+	// 		setUID(firebase.auth().currentUser.uid);
+	// 	}
+	// })
 
 	return (
 		<div className="bg-white w-72 h-[23em] flex flex-col items-center rounded-md my-16 mx-10">
@@ -68,7 +68,7 @@ const EventCard = ({ id, title, desc, price, link, time, venue, long_desc, conta
 				<div className="flex justify-between items-baseline">
 					<h3 className="text-black text-2xl font-extrabold">₹{price}</h3>
 					{/* <a className="mb-4"> */}
-					<Link to="/workshop/eventpage" state={{title:title, desc:desc, price:price, time:time, venue:venue, long_desc:long_desc, contact:contact}}>
+					<Link to="/workshop/eventpage" state={{id:id, title:title, desc:desc, price:price, time:time, venue:venue, long_desc:long_desc, contact:contact}}>
 						<Button
 							variant="primary"
 							kind="elevated"
