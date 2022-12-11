@@ -11,7 +11,7 @@ const EventPage = () => {
         <div className="w-4/5 mt-24 mx-auto flex justify-between flex-wrap md:flex-col">
 
 			{/*Description*/}
-			<div className="text-white w-4/6 px-10 mt-10 smm:px-0 smm:4/6 md:w-full lg:w-3/6 md:px-0 lg:px-5">
+			<div className="text-white w-4/6 px-10 mt-10 smm:px-0 md:w-full lg:w-3/6 md:px-0 lg:px-5">
 				<h3 className="text-4xl font-bold">{location.state.title}</h3>
 				<p className="text-lg py-4 border-b border-gray-600 mb-4">{location.state.desc}</p>
 				<p className='text-xl uppercase mt-4'>Time:</p>
