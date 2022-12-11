@@ -16,6 +16,7 @@ import Tilt from "react-parallax-tilt";
 import Zoom from "react-reveal/Zoom";
 import BackToTop from "react-back-to-top-button";
 import { AiOutlineArrowUp } from "react-icons/ai";
+import Loader from "./Loader";
 
 const Landing = () => {
 	const videoRef = useRef();
@@ -152,6 +153,7 @@ const Landing = () => {
 			>
 				<AiOutlineArrowUp />
 			</BackToTop>
+			<Loader />
 		</div>
 	);
 };

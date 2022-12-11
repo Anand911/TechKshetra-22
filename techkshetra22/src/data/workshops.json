@@ -2,7 +2,8 @@
     "w1" : {
         "title": "Build & Fly Your Own Drone",
         "desc": "Airshow, Simulator, Flight Training, Live demos and much more!",
-        "price": "500"
+        "price": "500",
+        "link" : "https://buy.stripe.com/test_14kbJl7knch91DWdQQ"
     },
     "w2" : {
         "title": "Learn Autodesk Fusion 360",

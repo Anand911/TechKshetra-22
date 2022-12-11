@@ -88,6 +88,4 @@ const Loader = () => {
     
 };
 
-//animations
- //
 export default Loader;

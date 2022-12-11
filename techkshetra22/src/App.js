@@ -9,11 +9,11 @@ import ProgressBar from "react-scroll-progress-bar";
 import Footer from "./components/Footer";
 import { Login } from "./components/Login";
 import Dashboard from "./components/Dashboard";
-import Loader from "./components/Loader";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfService from "./components/TermsOfService";
-import CustomerSupport from "./components/CustomerSupport";
+import Support from "./components/Support";
 import RefundPolicy from "./components/RefundPolicy";
+import Success from "./components/Success";
 
 function App() {
   return (
@@ -29,13 +29,13 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/termsofservice" element={<TermsOfService />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-          <Route path="/customersupport" element={<CustomerSupport />} />
+          <Route path="/support" element={<Support />} />
           <Route path="/refundpolicy" element={<RefundPolicy />} />
+          <Route path="/success" element={<Success />} />
         </Routes>
         <Header />
         <Footer />
       </div>
-      <Loader />
     </BrowserRouter>
   );
 }

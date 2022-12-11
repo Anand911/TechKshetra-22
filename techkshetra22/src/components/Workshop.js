@@ -32,48 +32,30 @@ const Workshop = () => {
     });
   }, [UID]);
 
-  const words = [
-    "WORKSHOPS",
-    "*",
-    "WORKSHOPS",
-    "*",
-    "WORKSHOPS",
-    "*",
-    "WORKSHOPS",
-    "*",
-    "WORKSHOPS",
-    "*",
-    "WORKSHOPS",
-    "*",
-  ];
+	const words = ["WORKSHOPS", "*", "WORKSHOPS","*", "WORKSHOPS", "*", "WORKSHOPS", "*", "WORKSHOPS", "*", "WORKSHOPS", "*",];
 
-  return (
-    <div className="pt-24">
-      <Slider words={words} />
-      <div className="flex flex-wrap justify-center pt-12">
-        {
-          // Map each workshop into an EventCard component
-          Object.keys(Data).map((key) => {
-            return (
-              <EventCard
-                id={key}
-                title={Data[key].title}
-                desc={Data[key].desc}
-                price={Data[key].price}
-                // Pass status of card, ie; registered or not
-                status={
-                  CardStatus && Object.keys(CardStatus).includes(key)
-                    ? "Registered"
-                    : "Register"
-                }
-              />
-            );
-          })
-        }
-      </div>
-      <Slider words={words} />
-    </div>
-  );
+	return (
+		<div className="pt-24">
+			<Slider words={words}/>
+			<div className="flex flex-wrap justify-center pt-12">
+			{// Map each workshop into an EventCard component
+			Object.keys(Data).map((key) => {
+				return (
+					<EventCard
+						id={key}
+						title={Data[key].title}
+						desc={Data[key].desc}
+						price={Data[key].price}
+						link={Data[key].link}
+						// Pass status of card, ie; registered or not
+						status={CardStatus && Object.keys(CardStatus).includes(key) ? "Registered" : "Register"}
+					/>
+				);
+			})}
+			</div>
+			<Slider words={words}/>
+		</div>
+	);
 };
 
 export default Workshop;

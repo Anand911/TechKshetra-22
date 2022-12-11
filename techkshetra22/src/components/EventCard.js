@@ -12,17 +12,18 @@ const db = getFirestore(app)
 const write = async ( UID, id, price ) => {
 
 	// Write item as collection with payment data
-	try {
-		const docRef = await setDoc(doc(db, "Registration", UID + "/" + id + "/Payment"), {
-			amount : price,
-			status : "paid",
-			timestamp : Date.now(),
-			transactionID : ""
-		});
-		console.log("Collection written with ID: ", docRef.id);
-	} catch (e) {
-		console.error("Error adding Collection: ", e);
-	}
+
+	// try {
+	// 	const docRef = await setDoc(doc(db, "Registration", UID + "/" + id + "/Payment"), {
+	// 		amount : price,
+	// 		status : "paid",
+	// 		timestamp : Date.now(),
+	// 		transactionID : ""
+	// 	});
+	// 	console.log("Collection written with ID: ", docRef.id);
+	// } catch (e) {
+	// 	console.error("Error adding Collection: ", e);
+	// }
 
 	// Write item as document
 	try {
@@ -38,10 +39,11 @@ const write = async ( UID, id, price ) => {
 	window.location.reload();
 }
 
-const EventCard = ({ id, title, desc, price, status }) => {
+const EventCard = ({ id, title, desc, price, link, status }) => {
 
 	// State variable for current user's UID
 	const [UID, setUID] = useState("");
+	const [isLoading, setLoading] = useState(false);
 
 	firebase.auth().onAuthStateChanged(user => {
 		if (user) {
@@ -64,19 +66,22 @@ const EventCard = ({ id, title, desc, price, status }) => {
 				<p className="text-black text-justify text-md my-2 pb-2">{desc}</p>
 				<div className="flex justify-between items-baseline">
 					<h3 className="text-black text-2xl font-extrabold">₹{price}</h3>
-					<div className="mb-4">
+					<a className="mb-4" href={link}>
 						<Button
 							variant="primary"
 							kind="elevated"
 							size="medium"
 							colorMode="dark"
-							onClick={() => write(UID, id, price)}
+							onClick={() => {
+								setLoading(true);
+								write(UID, id, price);
+							}}
 							// Disable button if item already registered
-							disabled = {status === "Registered"}
+							disabled = {status === "Registered" || isLoading}
 						>
 							{status}
 						</Button>
-					</div>
+					</a>
 				</div>
 			</div>
 		</div>

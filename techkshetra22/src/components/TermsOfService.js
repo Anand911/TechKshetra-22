@@ -128,7 +128,7 @@ const TermsOfService = () => {
           not hesitate to contact us.
         </p>
         <div className="py-8">
-          <Link to="/customersupport" className="pr-4 underline">
+          <Link to="/support" className="pr-4 underline">
             Customer Support
           </Link>
           <Link to="/refundpolicy" className="underline">
