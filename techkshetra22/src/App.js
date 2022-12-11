@@ -14,6 +14,7 @@ import TermsOfService from "./components/TermsOfService";
 import Support from "./components/Support";
 import RefundPolicy from "./components/RefundPolicy";
 import Success from "./components/Success";
+import DynamicPages from "./components/DynamicPages";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/support" element={<Support />} />
           <Route path="/refundpolicy" element={<RefundPolicy />} />
           <Route path="/success" element={<Success />} />
+          <Route path="/workshop/dynamicpage" element={<DynamicPages/>} />
         </Routes>
         <Header />
         <Footer />

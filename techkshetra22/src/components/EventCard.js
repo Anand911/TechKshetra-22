@@ -5,6 +5,7 @@ import { doc, setDoc, getFirestore } from "firebase/firestore";
 import { useState } from 'react';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
+import { Link } from "react-router-dom";
 
 const db = getFirestore(app)
 
@@ -66,7 +67,8 @@ const EventCard = ({ id, title, desc, price, link, status }) => {
 				<p className="text-black text-justify text-md my-2 pb-2">{desc}</p>
 				<div className="flex justify-between items-baseline">
 					<h3 className="text-black text-2xl font-extrabold">₹{price}</h3>
-					<a className="mb-4" href={link}>
+					{/* <a className="mb-4"> */}
+          <Link to="/workshop/dynamicpage" state={{title:title, desc:desc, price:price}}>
 						<Button
 							variant="primary"
 							kind="elevated"
@@ -74,14 +76,15 @@ const EventCard = ({ id, title, desc, price, link, status }) => {
 							colorMode="dark"
 							onClick={() => {
 								setLoading(true);
-								write(UID, id, price);
+								// write(UID, id, price);
 							}}
 							// Disable button if item already registered
 							disabled = {status === "Registered" || isLoading}
 						>
 							{status}
 						</Button>
-					</a>
+          </Link>
+					{/* </a> */}
 				</div>
 			</div>
 		</div>
