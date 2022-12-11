@@ -15,6 +15,7 @@ const firebaseConfig = {
 };
 
 const app = firebase.initializeApp(firebaseConfig);
+const storage = firebase.storage;
 
 // Configure FirebaseUI.
 const uiConfig = {
@@ -58,4 +59,4 @@ const Login = () => {
   );
 };
 
-export { Login, app };
+export { Login, app, storage };

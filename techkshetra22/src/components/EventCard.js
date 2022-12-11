@@ -40,7 +40,7 @@ const write = async ( UID, id, price ) => {
 	window.location.reload();
 }
 
-const EventCard = ({ id, title, desc, price, link, status }) => {
+const EventCard = ({ id, title, desc, price, link, time, venue, long_desc, contact, status }) => {
 
 	// State variable for current user's UID
 	const [UID, setUID] = useState("");
@@ -68,7 +68,7 @@ const EventCard = ({ id, title, desc, price, link, status }) => {
 				<div className="flex justify-between items-baseline">
 					<h3 className="text-black text-2xl font-extrabold">₹{price}</h3>
 					{/* <a className="mb-4"> */}
-          <Link to="/workshop/dynamicpage" state={{title:title, desc:desc, price:price}}>
+					<Link to="/workshop/eventpage" state={{title:title, desc:desc, price:price, time:time, venue:venue, long_desc:long_desc, contact:contact}}>
 						<Button
 							variant="primary"
 							kind="elevated"
@@ -83,7 +83,7 @@ const EventCard = ({ id, title, desc, price, link, status }) => {
 						>
 							{status}
 						</Button>
-          </Link>
+					</Link>
 					{/* </a> */}
 				</div>
 			</div>

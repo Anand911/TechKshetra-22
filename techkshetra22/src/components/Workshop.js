@@ -47,6 +47,10 @@ const Workshop = () => {
 						desc={Data[key].desc}
 						price={Data[key].price}
 						link={Data[key].link}
+						time={Data[key].time}
+						venue={Data[key].venue}
+						long_desc={Data[key].long_desc}
+						contact={Data[key].contact}
 						// Pass status of card, ie; registered or not
 						status={CardStatus && Object.keys(CardStatus).includes(key) ? "Registered" : "Register"}
 					/>

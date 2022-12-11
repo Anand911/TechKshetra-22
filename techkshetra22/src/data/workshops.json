@@ -3,16 +3,27 @@
         "title": "Build & Fly Your Own Drone",
         "desc": "Airshow, Simulator, Flight Training, Live demos and much more!",
         "price": "500",
-        "link" : "https://buy.stripe.com/test_14kbJl7knch91DWdQQ"
+        "time": "17th December 9:30 AM",
+        "venue": "KE BLOCK 3RD Floor",
+        "long_desc": "1. Drone workshop\n2. Logo launch using Drones\n3. Airshow\n4. Simulator practice\n5. Flight Training\n6. Aerial video footage\n7. Live demonstration on Heavy lifting drones",
+        "contact": "Ealishaw Johny - 9876543210"
     },
     "w2" : {
         "title": "Learn Autodesk Fusion 360",
         "desc": "Unify design, engineering, electronics and manufacturing with Fusion 360",
-        "price": "500"
+        "price": "500",
+        "time": "17th December 9:00 AM",
+        "venue": "Heisenberg Lab",
+        "long_desc": "",
+        "contact": "Ealishaw Johny - 9876543210"
     },
     "w3" : {
         "title": "Introduction to ROS",
         "desc": "Learn to simulate and build robots using Robot Operating System",
-        "price": "500"
+        "price": "500",
+        "time": "17th December 9:00 AM",
+        "venue": "Heisenberg Lab",
+        "long_desc": "",
+        "contact": "Ealishaw Johny - 9876543210"
     }
 }
