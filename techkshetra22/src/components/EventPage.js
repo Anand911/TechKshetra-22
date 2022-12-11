@@ -78,10 +78,10 @@ const EventPage = () => {
 	}
 
     return (
-        <div className="w-4/5 mt-24 mx-auto flex justify-between flex-wrap">
+        <div className="w-4/5 mt-24 mx-auto flex justify-between flex-wrap md:flex-col">
 
 			{/*Description*/}
-			<div className="text-white w-4/6 px-10 mt-10">
+			<div className="text-white w-4/6 px-10 mt-10 smm:px-0 md:w-full lg:w-3/6 md:px-0 lg:px-5">
 				<h3 className="text-4xl font-bold">{location.state.title}</h3>
 				<p className="text-lg py-4 border-b border-gray-600 mb-4">{location.state.desc}</p>
 				<p className='text-xl uppercase mt-4'>Time:</p>
@@ -94,7 +94,7 @@ const EventPage = () => {
 			</div>
 
 			{/*Payment*/}
-			<div className="w-2/6 p-4 bg-white text-black">
+			<div className="w-2/6 p-4 bg-white text-black md:w-2/3 md:mx-auto smm:w-full md:my-10 lg:w-[40%] sm:w-5/6">
 				<h3 className='pb-4 text-3xl font-bold border-b border-gray-600'>Register</h3>
 				<h4 className='text-2xl bg-black rounded-sm text-white font-bold p-2 my-4'>₹{location.state.price}</h4>
 				<p className='my-4 pb-4 text-justify border-b border-gray-600'>Pay the above mentioned amount using UPI and upload the receipt screenshot here. Our team will verify the payment. The 'Register' button will turn to 'Registered' if it is approved</p>
