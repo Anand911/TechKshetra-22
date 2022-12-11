@@ -31,10 +31,10 @@ const Header = () => {
           </li>
           <li>
             <Link
-              to="/techtalks"
+              to="/competitions"
               className="block p-4 mx-6 link link-underline link-underline-black md:mx-1 smm:text-[12px] smm:px-0 sm:text-[13px]"
             >
-              TechTalks
+              Competitions
             </Link>
           </li>
 

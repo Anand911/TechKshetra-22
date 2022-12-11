@@ -44,6 +44,8 @@ const EventPage = () => {
     const location = useLocation()
 
 	const [UID, setUID] = useState('');
+    const [email, setEmail] = useState('');
+    // const [element, setElement] = useState(<p>Please log in to register.</p>);
 	const [TransID, setTransID] = useState('');
     const [file, setFile] = useState('')
     const [url, setURL] = useState('https://firebasestorage.googleapis.com/v0/b/techkshetra-7fdd.appspot.com/o/screenshot.png?alt=media&token=740ca4a9-82a6-4f49-b64e-9e31487f625a')
@@ -52,6 +54,8 @@ const EventPage = () => {
 		if (user) {
 			// Update state variable
 			setUID(firebase.auth().currentUser.uid);
+			setEmail(firebase.auth().currentUser.email);
+			// setElement(<p>Logged in as {email}.</p>);
 		}
 	})
 
@@ -96,6 +100,7 @@ const EventPage = () => {
 			{/*Payment*/}
 			<div className="w-2/6 p-4 bg-white text-black md:w-2/3 md:mx-auto smm:w-full md:my-10 lg:w-[40%] sm:w-5/6">
 				<h3 className='pb-4 text-3xl font-bold border-b border-gray-600'>Register</h3>
+				<p className='pt-3'>{UID !== '' ? `Logged in as ${email}.` : "Please log in to register."}</p>
 				<h4 className='text-2xl bg-black rounded-sm text-white font-bold p-2 my-4'>₹{location.state.price}</h4>
 				<p className='my-4 pb-4 text-justify border-b border-gray-600'>Pay the above mentioned amount using UPI and upload the receipt screenshot here. Our team will verify the payment. The 'Register' button will turn to 'Registered' if it is approved</p>
 				<img src={QRcode} className="w-3/4 mb-5 mx-auto" alt='QRCode'/>
@@ -114,7 +119,8 @@ const EventPage = () => {
 							variant="primary"
 							kind="elevated"
 							size="big"
-							colorMode="dark">
+							colorMode="dark"
+							disabled={UID === ''}>
 							Register
 						</Button>
 					</div>

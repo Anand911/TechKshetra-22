@@ -86,7 +86,7 @@ const Landing = () => {
 				<div className="flex flex-col justify-center sm:pr-4">
 					<h3 className="my-3 text-3xl font-bold smm:text-lg">About Us</h3>
 					<p className="pb-10 text-2xl smm:text-sm text-justify">
-							Techkshetra 2022, the biennial technical festival of Rajagiri School of Engineering and Technology,
+							Techkshetra 2022, the biennial competitions festival of Rajagiri School of Engineering and Technology,
 							 Kakkanad, Kerala is a treasure trove of a wide range of events that bring together students of all fields for a day like no other. A group of tech driven students started a fiesta in the beginning of a new century and called it Techkshetra which translates to "Temple for Technology".
 					</p>
 				</div>
@@ -115,7 +115,7 @@ const Landing = () => {
 					title="Tech Talks"
 					desc="Talks that teach. Talks that inspire. Get ready to leave an impact on your life. "
 					image={Techtalk}
-					routing="/techtalks"
+					routing="/competitions"
 					/>
 				</div>
 				</Zoom>

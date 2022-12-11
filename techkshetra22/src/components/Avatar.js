@@ -40,14 +40,16 @@ const Avatar = () => {
 		return (
 			<div>
 				<Link to="/login">
-				<Button
-					variant="primary"
-					kind="elevated"
-					size="big"
-					colorMode="light"
-				>
-					Login
-				</Button>
+				<div className="mr-8 ml-4">
+					<Button
+						variant="primary"
+						kind="elevated"
+						size="big"
+						colorMode="light"
+					>
+						Login
+					</Button>
+				</div>
 				</Link>
 			</div>
 		);

@@ -3,7 +3,7 @@ import "./App.css";
 import Events from "./components/Events";
 import Landing from "./components/Landing";
 import Header from "./components/Navbar";
-import Techtalks from "./components/Techtalks";
+import Competitions from "./components/Competitions";
 import Workshop from "./components/Workshop";
 import ProgressBar from "react-scroll-progress-bar";
 import Footer from "./components/Footer";
@@ -25,7 +25,7 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/workshop" element={<Workshop />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/techtalks" element={<Techtalks />} />
+          <Route path="/competitions" element={<Competitions />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/termsofservice" element={<TermsOfService />} />

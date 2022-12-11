@@ -1,18 +1,22 @@
-import EventCard from "./EventCard"
-import Data from "../data/events.json"
+import EventCard from "./EventCard";
+import Data from "../data/events.json";
 import Slider from "./Slider";
 import { getFirestore, getDoc, doc } from "firebase/firestore";
-import { app } from './Login';
-import { useState, useEffect } from 'react';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
+import { app } from "./Login";
+import { useState, useEffect } from "react";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import { Button } from "@cred/neopop-web/lib/components";
+import { useNavigate } from "react-router-dom";
 
-const db = getFirestore(app)
+const db = getFirestore(app);
 
 const Events = () => {
-    // Current user state variables
-	const [UID, setUID] = useState("");
-	const [CardStatus, setCardStatus] = useState({});
+  // Current user state variables
+  const [UID, setUID] = useState("");
+  const [CardStatus, setCardStatus] = useState({});
+
+  const navigate = useNavigate();
 
 	useEffect(() => {
         firebase.auth().onAuthStateChanged(user => {
@@ -47,11 +51,28 @@ const Events = () => {
 						title={Data[key].title}
 						desc={Data[key].desc}
 						price={Data[key].price}
+						link={Data[key].link}
+						time={Data[key].time}
+						venue={Data[key].venue}
+						long_desc={Data[key].long_desc}
+						contact={Data[key].contact}
+						logo_url={Data[key].logo_url}
 						// Pass status of card, ie; registered or not
 						status={CardStatus && Object.keys(CardStatus).includes(key) ? "Registered" : "Register"}
 					/>
-				);
-			})}
+					);
+				})}
+			</div>
+			<div className="flex justify-center my-6 mb-12">
+				<Button
+					variant="primary"
+					kind="elevated"
+					size="big"
+					colorMode="light"
+					onClick={() => navigate('/dashboard')}
+				>
+					Go to Dashboard
+				</Button>
 			</div>
 			<Slider words={words}/>
 		</div>

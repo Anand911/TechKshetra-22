@@ -1,5 +1,5 @@
 import EventCard from "./EventCard";
-import Data from "../data/workshops.json";
+import Data from "../data/competitions.json";
 import Slider from "./Slider";
 import { getFirestore, getDoc, doc } from "firebase/firestore";
 import { app } from "./Login";
@@ -11,38 +11,39 @@ import { useNavigate } from "react-router-dom";
 
 const db = getFirestore(app);
 
-const Workshop = () => {
+const Competitions = () => {
   // Current user state variables
   const [UID, setUID] = useState("");
   const [CardStatus, setCardStatus] = useState({});
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        // Set UID state variable
-        setUID(firebase.auth().currentUser.uid);
+	useEffect(() => {
+        firebase.auth().onAuthStateChanged(user => {
+			if (user) {
 
-        // Get all registered event IDs from Firestore and store into CardStatus(Object)
-        try {
-          getDoc(doc(db, "Registration", UID)).then((value) => {
-            setCardStatus(value.data());
-          });
-        } catch (e) {
-          console.error("Error retrieving document: ", e);
-        }
-      }
-    });
-  }, [UID]);
+                // Set UID state variable
+				setUID(firebase.auth().currentUser.uid);
 
-	const words = ["WORKSHOPS", "*", "WORKSHOPS","*", "WORKSHOPS", "*", "WORKSHOPS", "*", "WORKSHOPS", "*", "WORKSHOPS", "*",];
+				// Get all registered event IDs from Firestore and store into CardStatus(Object)
+				try {
+					getDoc(doc(db, "Registration", UID)).then((value) => {
+						setCardStatus(value.data());
+					});
+				} catch (e) {
+					console.error("Error retrieving document: ", e);
+				}
+			}
+        });
+    }, [UID]);
+
+	const words = ["TECHTALKS", "*", "TECHTALKS","*", "TECHTALKS", "*", "TECHTALKS", "*", "TECHTALKS", "*", "TECHTALKS", "*",];
 
 	return (
 		<div className="pt-24">
 			<Slider words={words}/>
-			<div className="flex flex-wrap justify-center pt-12">
-			{// Map each workshop into an EventCard component
+			<div className="flex flex-wrap justify-center pt-4">
+			{// Map each tech talk into an EventCard component
 			Object.keys(Data).map((key) => {
 				return (
 					<EventCard
@@ -59,8 +60,8 @@ const Workshop = () => {
 						// Pass status of card, ie; registered or not
 						status={CardStatus && Object.keys(CardStatus).includes(key) ? "Registered" : "Register"}
 					/>
-				);
-			})}
+					);
+				})}
 			</div>
 			<div className="flex justify-center my-6 mb-12">
 				<Button
@@ -78,4 +79,4 @@ const Workshop = () => {
 	);
 };
 
-export default Workshop;
+export default Competitions;

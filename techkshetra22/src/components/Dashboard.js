@@ -5,7 +5,7 @@ import { Button } from "@cred/neopop-web/lib/components";
 import { Link } from "react-router-dom";
 import Workshops from "../data/workshops.json"
 import Events from "../data/events.json"
-import Techtalks from "../data/techtalks.json"
+import Competitions from "../data/competitions.json"
 import { app } from './Login';
 import { getFirestore, getDoc, doc } from "firebase/firestore";
 import firebase from "firebase/compat/app";
@@ -84,7 +84,7 @@ const Dashboard = () => {
                 // Render registered tech talks
                 } else {
                     try {
-                        content = [...content, <RegisteredEvents category="Techtalk" name={Techtalks[key]["title"]}/>]
+                        content = [...content, <RegisteredEvents category="Techtalk" name={Competitions[key]["title"]}/>]
                     } catch (e) {
                         console.log(e);
                     }

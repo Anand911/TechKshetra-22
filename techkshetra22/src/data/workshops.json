@@ -1,29 +1,32 @@
 {
     "w1" : {
-        "title": "Build & Fly Your Own Drone",
+        "title": "Build Your Own Drone",
         "desc": "Airshow, Simulator, Flight Training, Live demos and much more!",
-        "price": "500",
+        "price": "850",
         "time": "17th December 9:30 AM",
         "venue": "KE BLOCK 3RD Floor",
         "long_desc": "1. Drone workshop\n2. Logo launch using Drones\n3. Airshow\n4. Simulator practice\n5. Flight Training\n6. Aerial video footage\n7. Live demonstration on Heavy lifting drones",
-        "contact": "Ealishaw Johny - 9876543210"
+        "contact": "Ealishaw Johny - 9876543210",
+        "logo_url": "https://firebasestorage.googleapis.com/v0/b/techkshetra-7fdd.appspot.com/o/Logos%2Fgoogle.png?alt=media&token=9a1242a4-0b17-457b-8062-0e5bf16246f4"
     },
     "w2" : {
-        "title": "Learn Autodesk Fusion 360",
+        "title": "Learn Fusion 360",
         "desc": "Unify design, engineering, electronics and manufacturing with Fusion 360",
         "price": "500",
         "time": "17th December 9:00 AM",
-        "venue": "Heisenberg Lab",
-        "long_desc": "",
-        "contact": "Ealishaw Johny - 9876543210"
+        "venue": "CAD Lab",
+        "long_desc": "Fusion 360 software is required to design 3D parts. It is the easy to learn, yet can be used to draw the most complicated models",
+        "contact": "Aadil Mohamed - 9876543210",
+        "logo_url": "https://firebasestorage.googleapis.com/v0/b/techkshetra-7fdd.appspot.com/o/Logos%2Ffusion.png?alt=media&token=47b000dd-21d5-4563-9acd-be1a9d694138"
     },
     "w3" : {
-        "title": "Introduction to ROS",
+        "title": "Intro to ROS",
         "desc": "Learn to simulate and build robots using Robot Operating System",
-        "price": "500",
+        "price": "400",
         "time": "17th December 9:00 AM",
-        "venue": "Heisenberg Lab",
-        "long_desc": "",
-        "contact": "Ealishaw Johny - 9876543210"
+        "venue": "Sycamore Lab",
+        "long_desc": "Robot Operating System is an open-source robotics middleware suite used to make / simulate complex robots and test out Robotics algorithms without the need of much know-how on the algorithms behind because of which we can focus more on the implementation and application side. Even though ROS helps us to implement and simulate complex algorithms, It has a steep learning curve. With this Workshop I plan to provide a basic introduction on what ROS is and how to start making robots with ROS. The workshop will also include a handson session on working with a simulator called turtlesim with which the basics of ROS can be learned. I will also be demoing a ROS based Autonomous Navigation Robot built by me to further give clarity on the learned concepts.",
+        "contact": "Ealishaw Johny - 9876543210",
+        "logo_url": "https://firebasestorage.googleapis.com/v0/b/techkshetra-7fdd.appspot.com/o/Logos%2Fgoogle.png?alt=media&token=9a1242a4-0b17-457b-8062-0e5bf16246f4"
     }
 }

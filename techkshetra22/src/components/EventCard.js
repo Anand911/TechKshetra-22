@@ -1,11 +1,10 @@
-import React3D from "../assets/google.png";
 import { Button } from '@cred/neopop-web/lib/components';
 // import { app } from './Login';
 // import { doc, setDoc, getFirestore } from "firebase/firestore";
-import { useState } from 'react';
+// import { useState } from 'react';
 // import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // const db = getFirestore(app)
 
@@ -40,11 +39,12 @@ import { Link } from "react-router-dom";
 // 	window.location.reload();
 // }
 
-const EventCard = ({ id, title, desc, price, link, time, venue, long_desc, contact, status }) => {
+const EventCard = ({ id, title, desc, price, link, time, venue, long_desc, contact, logo_url, status }) => {
 
 	// State variable for current user's UID
 	// const [UID, setUID] = useState("");
-	const [isLoading, setLoading] = useState(false);
+	// const [isLoading, setLoading] = useState(false);
+	const navigate = useNavigate();
 
 	// firebase.auth().onAuthStateChanged(user => {
 	// 	if (user) {
@@ -58,7 +58,7 @@ const EventCard = ({ id, title, desc, price, link, time, venue, long_desc, conta
 			<div className="bg-black w-[95%] h-[10em] flex items-center justify-center rounded-md my-2">
 				<img
 				className=" object-cover rounded-md relative bottom-[30%]"
-				src={React3D}
+				src={logo_url}
 				alt="card"
 				/>
 			</div>
@@ -68,22 +68,20 @@ const EventCard = ({ id, title, desc, price, link, time, venue, long_desc, conta
 				<div className="flex justify-between items-baseline">
 					<h3 className="text-black text-2xl font-extrabold">₹{price}</h3>
 					{/* <a className="mb-4"> */}
-					<Link to="/workshop/eventpage" state={{id:id, title:title, desc:desc, price:price, time:time, venue:venue, long_desc:long_desc, contact:contact}}>
-						<Button
-							variant="primary"
-							kind="elevated"
-							size="medium"
-							colorMode="dark"
-							onClick={() => {
-								setLoading(true);
-								// write(UID, id, price);
-							}}
-							// Disable button if item already registered
-							disabled = {status === "Registered" || isLoading}
-						>
-							{status}
-						</Button>
-					</Link>
+					<Button
+						variant="primary"
+						kind="elevated"
+						size="medium"
+						colorMode="dark"
+						onClick={() => {
+							navigate('/workshop/eventpage', { state: {id:id, title:title, desc:desc, price:price, time:time, venue:venue, long_desc:long_desc, contact:contact}});
+							// write(UID, id, price);
+						}}
+						// Disable button if item already registered
+						disabled = {status === "Registered"}
+					>
+						{status}
+					</Button>
 					{/* </a> */}
 				</div>
 			</div>
